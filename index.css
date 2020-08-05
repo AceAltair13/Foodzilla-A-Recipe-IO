@@ -14,10 +14,10 @@ header{
 }
 
 
-h1{
-    padding-top:200px;
-    padding-left:350px;
+header h1{
+    padding-top:15%;
     font-family: Cinzel;
     font-weight:bold;
     color: #ffffff;
+    text-align:center;
 }
