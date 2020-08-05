@@ -10,7 +10,7 @@ header{
 
 @font-face{
     font-family:Cinzel;
-    src: url(assets/Cinzel-Bold.ttf);
+    src: url(Cinzel-Regular.ttf);
 }
 
 
@@ -18,5 +18,6 @@ h1{
     padding-top:200px;
     padding-left:350px;
     font-family: Cinzel;
+    font-weight:bold;
     color: #ffffff;
 }
