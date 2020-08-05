@@ -1,0 +1,22 @@
+header{
+    background-image: url("https://cdni.rbth.com/rbthmedia/images/all/2016/04/12/foodfest.jpg");
+    background-color:#cccccc;
+    width:80%;
+    height:80vh;
+    margin:5%;
+    background-repeat:no-repeat;
+    background-size : cover;
+}
+
+@font-face{
+    font-family:Cinzel;
+    src: url(assets/Cinzel-Bold.ttf);
+}
+
+
+h1{
+    padding-top:200px;
+    padding-left:350px;
+    font-family: Cinzel;
+    color: #ffffff;
+}
