@@ -1,4 +1,4 @@
-header{
+header {
     background-image: url("https://cdni.rbth.com/rbthmedia/images/all/2016/04/12/foodfest.jpg");
     background-color:#cccccc;
     width:96%;
@@ -14,7 +14,7 @@ header{
 }
 
 
-header h1{
+header h1 {
     padding-top:15%;
     font-family: Cinzel;
     font-weight:bold;
