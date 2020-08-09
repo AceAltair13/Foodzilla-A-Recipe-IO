@@ -1,0 +1,25 @@
+.featurette {
+    /* border: solid 1px #ebdc87;
+    border-radius: 20px; */
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.featurette-icon {
+    margin: 1rem 0 1rem 0;
+    color: #ffa36c;
+}
+
+.featurette-icon:hover {
+    color: #ebdc87;
+}
+
+.featurette-heading {
+    font-family: 'Rowdies', cursive;
+    color: #fbd46d;
+}
+
+.featurette-text {
+    font-family: 'PT Sans', sans-serif;
+}
