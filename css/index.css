@@ -1,3 +1,12 @@
+/*================Features===================*/
+
+.featurette-title {
+    font-family: 'Rowdies', cursive;
+    color: #fbd46d;
+    text-align: center;
+    padding-top: 3%;
+}
+
 .featurette {
     /* border: solid 1px #ebdc87;
     border-radius: 20px; */
@@ -23,3 +32,9 @@
 .featurette-text {
     font-family: 'PT Sans', sans-serif;
 }
+
+.featurette-button {
+    margin-top: 5%;
+}
+
+/*==========================================*/
