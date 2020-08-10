@@ -1,5 +1,15 @@
 /*================Features===================*/
 
+.featurette-main-heading {
+    font-size: 6.5rem;
+}
+
+@media (max-width: 768px) {
+    .featurette-main-heading{
+        font-size: 4rem;
+    }
+}
+
 .featurette-title {
     font-family: 'Rowdies', cursive;
     color: #fbd46d;
