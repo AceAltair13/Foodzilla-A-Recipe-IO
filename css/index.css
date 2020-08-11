@@ -1,12 +1,16 @@
 /*================Features===================*/
 
+.feature-background {
+    background-color: #810000;
+}
+
 .featurette-main-heading {
     font-size: 6.5rem;
 }
 
 @media (max-width: 768px) {
     .featurette-main-heading{
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 }
 
@@ -47,4 +51,76 @@
     margin-top: 5%;
 }
 
-/*==========================================*/
+/*==================Testimonial===================*/
+
+.testimonial {
+    color: #810000;
+}
+
+.testimonial-background {
+    background-color: #fbd46d;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.testimonial-container {
+    padding-bottom: 2%;
+}
+
+.avatar {
+    border-radius: 100%;
+    width: 8rem;
+}
+
+.testimonials {
+    padding-top: 3%;
+    text-align: center;
+}
+
+.testimonial-text {
+    padding: 2% 8% 2%;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .testimonial-text {
+        padding: 2% 8% 2%;
+        font-size: 1.4rem;
+    }
+    .avatar {
+        width: 6rem;
+    }
+}
+
+/*====================About========================*/
+
+.about-background {
+    background-color: #cf1b1b;
+}
+
+.about {
+    color: #ffe78f;
+}
+
+.team-image {
+    text-align: center;
+}
+
+.team-avatar {
+    width: 12rem;
+}
+
+.about-title {
+    padding-top: 3%;
+    font-family: 'Rowdies', cursive;
+    font-size: 2.6rem;
+    font-weight: bolder;
+    color: #ffe78f;
+}
+
+.about-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffe78f;
+    font-family: 'PT Sans', sans-serif;
+}
