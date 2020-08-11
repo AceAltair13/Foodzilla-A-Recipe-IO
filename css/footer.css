@@ -1,0 +1,185 @@
+.io{
+    border-width:medium;
+    border-style:solid;
+    border-color: thistle;
+    border-top: 1px solid pink;
+    border-left: 1px solid pink;
+    background-color:#d8bfd8;
+    border-radius: 10px ;
+    background-size: auto;
+    background-repeat:no-repeat;
+    background-position: center;  
+    background-attachment: local;     
+    background-origin: border-box;  
+    background-origin: content-box; 
+    padding-left: 50px;
+    padding-top:10px;
+    padding-right:50px;
+    padding-bottom:10px;
+    width :92%;
+}
+#iop{
+    border-top:1px solid purple;
+    border-left:1px solid purple;
+    border-bottom:1px solid purple;
+    border-right:1px solid purple;
+    margin-top:-5px;
+    width:27em;
+    height:30px;
+    box-sizing: border-box;
+
+
+
+}
+#_2{
+
+    border-top:1px solid purple;
+    border-left:1px solid purple;
+    border-bottom:1px solid purple;
+    border-right:1px solid purple;
+    background-color: white;
+    margin-top:5px;
+    /*box-sizing:border-box;*/
+    width:350px;
+    height:150px;
+    resize:none;
+    font-size:"13px";
+}
+ #_s{
+    border-top:1px solid rgb(97, 34, 199);
+    border-left:1px solid rgb(49, 0, 128);
+    border-bottom:1px solid rgb(49, 0, 128);
+    border-right:1px solid rgb(49, 0, 128);
+    background-color:rgb(97, 34, 199);
+    border-top-right-radius: 5px 4px;
+    border-top-left-radius: 5px 4px;
+    border-bottom-left-radius: 5px 4px;
+    border-bottom-right-radius: 5px 4px;
+    /*border-top-left-radius: 5px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 5px;
+    border-start-end-radius: 2px 5px;
+    border-end-start-radius:2px  5px;
+    border-end-end-radius: 2px ;*/
+    /*border-radius: 2px 5px ;*/
+    margin-top:5px;
+    width:350px;
+    height:25px;
+    color:white;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+#_b{
+    /*visibility: collapse;*/
+    /*display:block;
+    padding-right:300px*/
+    position:fixed;
+    left:600px;
+    top:20px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight:lighter;
+}
+#_h{
+    position:fixed;
+    top:20px;
+    left:820px;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight:lighter;
+}
+#_t{
+    position:fixed;
+    top:20px;
+    left:1050px;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight:lighter;
+}
+#_regi{
+    position:fixed;
+    top:80px;
+    left:600px;
+    text-decoration: none;
+    color:blue;
+}
+#_home{
+    position:fixed;
+    top:120px;
+    left:600px;
+    text-decoration: none;
+    color:blue;
+}
+#_ab{
+    position:fixed;
+    top:160px;
+    left:600px;
+    text-decoration: none;
+    color:blue;
+}
+
+#_fa{
+    position:fixed;
+    top:80px;
+    left:820px;
+    text-decoration: none;
+    color:blue;
+}
+#_TC{
+    position:fixed;
+    top:120px;
+    left:820px;
+    text-decoration: none;
+    color:blue;
+}
+#_doc{
+    position:fixed;
+    top:160px;
+    left:820px;
+    text-decoration: none;
+    color:blue;
+}
+#_con{
+    position:fixed;
+    top:80px;
+    left:1050px;
+    color:rgb(108, 34, 226);
+    font-weight: lighter;
+    font-size: 18px;
+    color:blue;
+}
+#_emai{
+    position:fixed;
+    top:120px;
+    left:1050px;
+    color:rgb(108, 34, 226);
+    font-weight: lighter;
+    font-size: 18px;
+    color:blue;
+}
+#_face{
+    color:rgb(37, 54, 209);
+    font-size:39px;
+    position:fixed;
+    left:1090px;
+    top:200px;
+}
+#_twii{
+    color:whitesmoke;
+    font-size:40px;
+    position:fixed;
+    left:1160px;
+    top:200px;
+}
+#_inre{
+    width:40px;
+    height:40px;
+    position:fixed;
+    left:1240px;
+    top:200px;
+}
+#_ple{
+    font-family: 'PT Sans', sans-serif;
+}
+#_get{
+    font-family: 'PT Sans', sans-serif;
+    font-weight:lighter;
+}
