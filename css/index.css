@@ -13,7 +13,7 @@ header nav a{
 }
 
 .navbar-brand{
-    margin-right:75%;
+    margin-right:70%;
 }
 
 
@@ -27,7 +27,8 @@ header h1{
     font-family: Cinzel;
     text-align:center;
     padding-top: 3%;
-    font-size: 5em;
+    font-size: 5rem;
+    overflow:none;
 
 }
 
@@ -44,6 +45,12 @@ header p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width:650px){
+    header h1{
+        font-size: 3rem;
+    }
 }
 
 
@@ -174,3 +181,4 @@ header p{
     color: #ffe78f;
     font-family: 'PT Sans', sans-serif;
 }
+/*====================Footer========================*/
