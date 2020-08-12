@@ -1,10 +1,12 @@
 
 /*================Header===================*/
 
-
 header{
     background-color : #FFE74C;
     height : 100vh;
+    background-image: url(/assets/images/header-cover.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 header nav a{
@@ -29,7 +31,6 @@ header h1{
     padding-top: 3%;
     font-size: 5rem;
     overflow:none;
-
 }
 
 
