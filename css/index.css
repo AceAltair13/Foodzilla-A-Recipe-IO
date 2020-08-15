@@ -1,54 +1,55 @@
+
 /*================Header===================*/
 
-header {
-    background-color: #FFE74C;
-    height: 100vh;
+header{
+    background-color : #FFE74C;
+    height : 100vh;
     background-image: url(../assets/images/header_cover.jpg);
     background-position: center;
     background-size: cover;
 }
 
-header nav a {
-    margin-top: 0.5em;
+header nav a{
+    margin-top:0.5em;
     font-weight: bold;
 }
 
-.navbar-brand {
-    margin-right: 70%;
+.navbar-brand{
+    margin-right:70%;
 }
 
 
-header img.icon {
-    display: block;
-    padding-top: 2%;
-    margin: 0 auto;
+header img.icon{
+    display:block;
+    padding-top:2%;
+    margin:0 auto;
 }
 
-header h1 {
+header h1{
     font-family: Cinzel;
-    text-align: center;
+    text-align:center;
     padding-top: 3%;
     font-size: 5rem;
-    overflow: none;
+    overflow:none;
 }
 
 
-header hr {
+header hr{
     border: 0;
     border-bottom: 1px dashed;
-    width: 30%;
+    width:30%;
 }
 
-header p {
+header p{
     font-size: 2em;
-    font-family: Lobster, Arial, Helvetica, sans-serif;
+    font-family: Lobster,Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media screen and (max-width:650px) {
-    header h1 {
+@media screen and (max-width:650px){
+    header h1{
         font-size: 3rem;
     }
 }
@@ -66,7 +67,7 @@ header p {
 }
 
 @media (max-width: 768px) {
-    .featurette-main-heading {
+    .featurette-main-heading{
         font-size: 3.5rem;
     }
 }
@@ -144,7 +145,6 @@ header p {
         padding: 2% 8% 2%;
         font-size: 1.4rem;
     }
-
     .avatar {
         width: 6rem;
     }
@@ -182,5 +182,4 @@ header p {
     color: #ffe78f;
     font-family: 'PT Sans', sans-serif;
 }
-
 /*====================Footer========================*/
