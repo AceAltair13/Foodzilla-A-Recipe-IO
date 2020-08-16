@@ -55,45 +55,17 @@ header div li{
 header img.icon{
     display:block;
     padding-top:15vh;
-    margin:0 auto;
-}
-
-@media screen and (max-width:1200px)
-{
-	header img.icon{
-		padding-top:15vh;
-	}
+	margin:0 auto;
+	height:18rem;
 }
 
 header h1{
     font-family: Cinzel;
     text-align:center;
-    padding-top: 1%;
-    font-size: 6rem;
-    overflow:none;
+    font-size: 4.5rem;
+	overflow:none;
+	padding-top:1%;
 }
-
-@media screen and (max-width:1200px){
-    header h1{
-        font-size: 4rem;
-    }
-}
-
-@media screen and (max-width:700px)
-{
-	header h1{
-		font-size:3rem;
-	}
-}
-
-@media screen and (max-width:500px)
-{
-	header h1{
-		font-size:2rem;
-	}
-}
-
-
 
 header hr{
     border: 0;
@@ -109,18 +81,88 @@ header p{
     align-items: center;
 }
 
-@media screen and (max-width:700px){
-	header p 
-	{
+
+@media screen and (min-width:1400px){
+	header img.icon{
+		padding-top:22vh;
+		height:25rem;
+	}
+
+	
+	header h1{
+        font-size: 6rem;
+	}
+
+	header p{
+		font-size:2.2rem
+	}
+}
+
+@media screen and (max-width:1200px)
+{
+	header img.icon{
+		padding-top:17.5vh;
+		height:18rem;
+	}
+
+	header h1{
+        font-size: 4rem;
+	}
+	
+	header p{
 		font-size:1.5rem;
 	}
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:1000px){
+
+	header img.icon{
+		padding-top:22vh;
+		height:17.8rem;
+	}
+
+	header h1{
+		font-size:3.5rem;
+	}
+
+	header p 
+	{
+		font-size:1.3rem;
+	}	
+}
+
+
+
+@media screen and (max-width:768px){
+
+	header img.icon{
+		padding-top:24vh;
+		height:17rem;
+	}
+
+	header h1{
+		font-size:3rem;
+	}
+
 	header p{
 		font-size:1rem;
 	}
 }
+
+@media screen and (max-width:400px){
+	
+	header img.icon{
+		padding-top:30vh;
+		height:22rem;
+	}
+
+	header h1{
+		font-size:2.5rem;
+	}
+}
+
+
+
 
 
 
