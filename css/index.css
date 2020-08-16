@@ -23,6 +23,20 @@ header nav a{
 	margin-right:68vw;
 }
 
+@media screen and (max-width:1350px)
+{
+	.navbar-brand{
+		margin-right:61.5vw;
+	}
+}
+
+@media screen and (max-width:600px)
+{
+	.navbar-brand{
+		margin-right: 1vw;
+	}
+}
+
 header div li{
 	margin-left:10%;
 	transition:color 1s;
