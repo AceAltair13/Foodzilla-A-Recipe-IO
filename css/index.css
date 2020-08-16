@@ -20,7 +20,7 @@ header nav a{
 }
 
 .navbar-brand{
-    margin-right:72%;
+	margin-right:68vw;
 }
 
 header div li{
@@ -28,9 +28,6 @@ header div li{
 	transition:color 1s;
 }
 
-header nav:hover{
-	color:#FAF500;
-}
 
 @media screen and (max-width:1200px){
 	header div li{
@@ -40,19 +37,48 @@ header nav:hover{
 }
 
 
+
 header img.icon{
     display:block;
-    padding-top:3%;
+    padding-top:15vh;
     margin:0 auto;
+}
+
+@media screen and (max-width:1200px)
+{
+	header img.icon{
+		padding-top:15vh;
+	}
 }
 
 header h1{
     font-family: Cinzel;
     text-align:center;
     padding-top: 1%;
-    font-size: 5rem;
+    font-size: 6rem;
     overflow:none;
 }
+
+@media screen and (max-width:1200px){
+    header h1{
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width:700px)
+{
+	header h1{
+		font-size:3rem;
+	}
+}
+
+@media screen and (max-width:500px)
+{
+	header h1{
+		font-size:2rem;
+	}
+}
+
 
 
 header hr{
@@ -62,18 +88,27 @@ header hr{
 }
 
 header p{
-    font-size: 2em;
-    font-family: Lobster,Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-family: 'Della Respira', serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media screen and (max-width:650px){
-    header h1{
-        font-size: 3rem;
-    }
+@media screen and (max-width:700px){
+	header p 
+	{
+		font-size:1.5rem;
+	}
 }
+
+@media screen and (max-width:500px){
+	header p{
+		font-size:1rem;
+	}
+}
+
+
 
 
 
