@@ -82,37 +82,24 @@ header p{
 }
 
 
-@media screen and (min-width:1400px){
+@media screen and (min-height:800px)
+{
 	header img.icon{
-		padding-top:22vh;
+		padding-top:24vh;
 		height:25rem;
 	}
 
-	
 	header h1{
-        font-size: 6rem;
-	}
-
-	header p{
-		font-size:2.2rem
-	}
-}
-
-@media screen and (max-width:1200px)
-{
-	header img.icon{
-		padding-top:17.5vh;
-		height:18rem;
-	}
-
-	header h1{
-        font-size: 4rem;
+        font-size: 5rem;
 	}
 	
 	header p{
 		font-size:1.5rem;
 	}
 }
+
+
+
 
 @media screen and (max-width:1000px){
 
@@ -137,7 +124,7 @@ header p{
 
 	header img.icon{
 		padding-top:24vh;
-		height:17rem;
+		height:20rem;
 	}
 
 	header h1{
@@ -149,15 +136,45 @@ header p{
 	}
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:480px){
 	
 	header img.icon{
-		padding-top:30vh;
+		padding-top:28vh;
 		height:22rem;
 	}
 
 	header h1{
 		font-size:2.5rem;
+	}
+}
+
+
+@media screen and (max-width:250px){
+	
+	header img.icon{
+		padding-top:23vh;
+		height:9rem;
+	}
+
+	header h1{
+		font-size:1.5rem;
+	}
+}
+
+
+@media screen and (min-height:1024px)
+{
+	header img.icon{
+		padding-top:30vh;
+		height:38rem;
+	}
+
+	header h1{
+        font-size: 4rem;
+	}
+	
+	header p{
+		font-size:1rem;
 	}
 }
 
