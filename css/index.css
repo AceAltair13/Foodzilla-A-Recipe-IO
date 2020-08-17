@@ -123,17 +123,17 @@ header p{
 @media screen and (max-width:1048px){
 
 	header img.icon{
-		padding-top:22vh;
+		padding-top:25vh;
 		height:48vh;
 	}
 
 	header h1{
-		font-size:3.5rem;
+		font-size:4rem;
 	}
 
 	header p 
 	{
-		font-size:1.25rem;
+		font-size:1.5rem;
 	}	
 }
 
@@ -142,7 +142,7 @@ header p{
 @media screen and (max-width:768px){
 
 	header img.icon{
-		padding-top:28vh;
+		padding-top:25vh;
 		height:48vh;
 	}
 
