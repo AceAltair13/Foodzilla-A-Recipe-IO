@@ -33,7 +33,7 @@ header nav a{
 @media screen and (max-width:600px)
 {
 	.navbar-brand{
-		margin-right: 1vw;
+		margin-right: 0.05vw;
 	}
 }
 
@@ -82,30 +82,49 @@ header p{
 }
 
 
-@media screen and (min-height:800px)
-{
+
+@media screen and (min-width:1300px){
+
+
+	
 	header img.icon{
-		padding-top:24vh;
-		height:25rem;
+		padding-top:20vh;
+		height:50vh;
 	}
 
 	header h1{
-        font-size: 5rem;
+		font-size:5rem;
 	}
-	
+
 	header p{
-		font-size:1.5rem;
+		font-size:2rem;
 	}
+
 }
 
 
+@media screen and (max-width:1280px){
 
+	header img.icon{
+		padding-top:16vh;
+		height:45vh;
+	}
 
-@media screen and (max-width:1000px){
+	header h1{
+		font-size:5rem;
+	}
+
+	header p 
+	{
+		font-size:1.5rem;
+	}	
+}
+
+@media screen and (max-width:1048px){
 
 	header img.icon{
 		padding-top:22vh;
-		height:17.8rem;
+		height:48vh;
 	}
 
 	header h1{
@@ -114,7 +133,7 @@ header p{
 
 	header p 
 	{
-		font-size:1.3rem;
+		font-size:1.25rem;
 	}	
 }
 
@@ -123,8 +142,8 @@ header p{
 @media screen and (max-width:768px){
 
 	header img.icon{
-		padding-top:24vh;
-		height:20rem;
+		padding-top:28vh;
+		height:48vh;
 	}
 
 	header h1{
@@ -132,7 +151,7 @@ header p{
 	}
 
 	header p{
-		font-size:1rem;
+		font-size:1.2rem;
 	}
 }
 
@@ -140,7 +159,7 @@ header p{
 	
 	header img.icon{
 		padding-top:28vh;
-		height:22rem;
+		height:46vh;
 	}
 
 	header h1{
@@ -149,34 +168,31 @@ header p{
 }
 
 
-@media screen and (max-width:250px){
+@media screen and (max-width:280px){
+
+	.navbar-brand{
+		margin-right:100vw;
+	}
 	
 	header img.icon{
-		padding-top:23vh;
-		height:9rem;
+		padding-top:35vh;
+		height:55vh;
 	}
 
 	header h1{
-		font-size:1.5rem;
-	}
-}
-
-
-@media screen and (min-height:1024px)
-{
-	header img.icon{
-		padding-top:30vh;
-		height:38rem;
-	}
-
-	header h1{
-        font-size: 4rem;
-	}
-	
-	header p{
+		padding-top:none;
 		font-size:1rem;
 	}
+
+	header p{
+		font-size:0.5rem;
+	}
+
 }
+
+
+
+
 
 
 
