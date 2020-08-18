@@ -370,7 +370,7 @@ footer{
 
 .footer-distributed h3{
 	color:  #5383d3;
-	font: normal 36px 'Cookie', cursive;
+	font: normal 36px Cinzel;
 	margin: -30px;
 	font-size: 50px;
 }
@@ -504,16 +504,26 @@ footer{
 		display: block;
 		color: #ffffff;
 		/* vertical-align: middle; */
-		margin:0;
+		margin:0px;
 	}
 
 	.footer-distributed .footer-center i{
-		margin-left: 0;
+		margin-top:30px;
 
 	}
+	
 	.main {
 		line-height: normal;
 		font-size: auto;
 	}
+	.footer-distributed h3{
+		color:  #5383d3;
+		font: normal 36px Cinzel;
+		margin-top:5px;
+	}
+	.footer-distributed .footer-right{
+		margin-top: 80px;
+	}
+
 
 }
