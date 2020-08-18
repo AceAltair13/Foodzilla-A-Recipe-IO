@@ -361,7 +361,7 @@ footer{
 .footer-distributed .footer-center,
 .footer-distributed .footer-right{
 	display: inline-block;
-	vertical-align: top;webdevtrick © 2019;
+	vertical-align: top;
 }
 
 .footer-distributed .footer-left{
@@ -369,7 +369,7 @@ footer{
 }
 
 .footer-distributed h3{
-	color:  #ffffff;
+	color:  #5383d3;
 	font: normal 36px 'Cookie', cursive;
 	margin: -30px;
 	font-size: 50px;
@@ -500,9 +500,16 @@ footer{
 		margin-bottom: 40px;
 		text-align: center;
 	}
+	.footer-distributed .footer-center p{
+		display: block;
+		color: #ffffff;
+		/* vertical-align: middle; */
+		margin:0;
+	}
 
 	.footer-distributed .footer-center i{
 		margin-left: 0;
+
 	}
 	.main {
 		line-height: normal;
