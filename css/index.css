@@ -4,7 +4,7 @@
 header{
     background-color : #FFE74C;
     height : 100vh;
-    background-image: url(../assets/images/header_cover.jpg);
+    background-image: url(../assets/images/header_cover.webp);
     background-position: center;
     background-size: cover;
 }
