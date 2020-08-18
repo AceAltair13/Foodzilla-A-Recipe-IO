@@ -506,6 +506,13 @@ footer{
 		/* vertical-align: middle; */
 		margin:0px;
 	}
+	.footer-distributed .footer-center #second{
+		margin-top:5px;
+	}
+	.footer-distributed .footer-center #third{
+		margin-top:5px;
+	}
+
 
 	.footer-distributed .footer-center i{
 		margin-top:30px;
