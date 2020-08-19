@@ -137,6 +137,9 @@ header p{
 	}	
 }
 
+.navbar-brand{
+	margin-right:59vw;
+}
 
 
 @media screen and (max-width:768px){
