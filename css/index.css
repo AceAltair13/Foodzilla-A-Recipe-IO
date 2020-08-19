@@ -374,6 +374,12 @@ footer{
 	margin: -30px;
 	font-size: 50px;
 }
+.footer-distributed h3:hover {
+	/* width: 300px;
+	height: 300px; */
+	transform: rotate(360deg);
+	transition: width 2s, height 2s, transform 2s;
+  }
 
 .footer-distributed h3 span{
 	color:  #5383d3;
