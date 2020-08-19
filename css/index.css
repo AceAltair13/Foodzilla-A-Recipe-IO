@@ -192,6 +192,10 @@ header hr{
 }
 
 @media screen and (max-width:480px){
+
+	.navbar-brand{
+		margin-right:0.2vw;
+	}
 	
 	header img.icon{
 		padding-top:28vh;
@@ -204,7 +208,7 @@ header hr{
 }
 
 
-@media screen and (max-width:280px){
+@media screen and (max-width:300px){
 
 	.navbar-brand{
 		margin-right:100vw;
