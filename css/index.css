@@ -220,8 +220,13 @@ header p{
     }
 }
 
+@font-face {
+	font-family: Rowdies;
+	src: url(../assets/fonts/Rowdies-Regular.ttf);
+}
+
 .featurette-title {
-    font-family: 'Rowdies', cursive;
+    font-family: Rowdies, cursive;
     color: #fbd46d;
     text-align: center;
     padding-top: 3%;
@@ -247,7 +252,7 @@ header p{
 }
 
 .featurette-heading {
-    font-family: 'Rowdies', cursive;
+    font-family: Rowdies, cursive;
     color: #fbd46d;
 }
 
@@ -325,7 +330,7 @@ header p{
 
 .about-title {
     padding-top: 3%;
-    font-family: 'Rowdies', cursive;
+    font-family: Rowdies, cursive;
     font-size: 2.6rem;
     font-weight: bolder;
     color: #ffe78f;
