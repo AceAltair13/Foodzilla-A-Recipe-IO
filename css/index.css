@@ -50,6 +50,19 @@ header div li{
 	
 }
 
+.nav-link{
+	transition:color 2s !important;
+}
+
+.nav-link:hover{
+	color:yellow !important;
+}
+
+
+img.icon:hover{
+	transform: 2s rotate(360deg);
+}
+
 
 
 header img.icon{
@@ -59,18 +72,27 @@ header img.icon{
 	height:18rem;
 }
 
+img.icon{
+	transition:ease 2s;
+}
+
+img.icon:hover{
+	transform:rotate(360deg);
+	transform-origin:center center;
+
+}
+
 header h1{
     font-family: Cinzel;
     text-align:center;
     font-size: 4.5rem;
 	overflow:none;
 	padding-top:1%;
+	transition: color 2s;
 }
 
-header hr{
-    border: 0;
-    border-bottom: 1px dashed;
-    width:30%;
+header h1:hover{
+	color:#FFEA03;
 }
 
 header p{
@@ -78,7 +100,18 @@ header p{
     font-family: 'Della Respira', serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	transition:color 2s;
+}
+
+p:hover{
+	color:#FFEA03;
+}
+
+header hr{
+    border: 0;
+    border-bottom: 1px dashed;
+    width:30%;
 }
 
 
@@ -159,6 +192,10 @@ header p{
 }
 
 @media screen and (max-width:480px){
+
+	.navbar-brand{
+		margin-right:0.2vw;
+	}
 	
 	header img.icon{
 		padding-top:28vh;
@@ -171,7 +208,7 @@ header p{
 }
 
 
-@media screen and (max-width:280px){
+@media screen and (max-width:300px){
 
 	.navbar-brand{
 		margin-right:100vw;
