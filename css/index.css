@@ -50,6 +50,11 @@ header div li{
 	
 }
 
+.dropdown-menu{
+	background-color:yellow;
+	min-width: 0.5vw;
+}
+
 
 
 header img.icon{
@@ -135,6 +140,10 @@ header p{
 	{
 		font-size:1.5rem;
 	}	
+
+	.navbar-brand{
+		margin-right:59vw;
+	}
 }
 
 
