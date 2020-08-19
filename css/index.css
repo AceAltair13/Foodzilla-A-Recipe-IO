@@ -243,11 +243,13 @@ header p{
 
 .featurette-icon {
     margin: 1rem 0 1rem 0;
-    color: #ffa36c;
+	color: #ffa36c;
+	transition: transform 2s;
 }
 
 .featurette-icon:hover {
-    color: #ebdc87;
+	color: #ebdc87;
+	transform: rotate(360deg);
 }
 
 .featurette-heading {
@@ -319,7 +321,12 @@ header p{
 }
 
 .team-avatar {
-    width: 12rem;
+	width: 12rem;
+	transition: transform 0.4s;
+}
+
+.team-avatar:hover {
+	transform: scale(1.12);
 }
 
 .about-title {
