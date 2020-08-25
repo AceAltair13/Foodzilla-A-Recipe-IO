@@ -63,13 +63,15 @@ img.icon:hover{
 	transform: 2s rotate(360deg);
 }
 
-
+.header-content{
+	padding-top:5vh;
+}
 
 header img.icon{
     display:block;
-    padding-top:15vh;
 	margin:0 auto;
 	height:18rem;
+	box-sizing: border-box;
 }
 
 img.icon{
@@ -118,10 +120,12 @@ header hr{
 
 @media screen and (min-width:1300px){
 
-
+	
+	.header-content{
+		padding-top:20vh;
+	}
 	
 	header img.icon{
-		padding-top:20vh;
 		height:50vh;
 	}
 
@@ -138,9 +142,12 @@ header hr{
 
 @media screen and (max-width:1280px){
 
+	.header-content{
+		padding-top:12vh;
+	}
+
 	header img.icon{
-		padding-top:16vh;
-		height:45vh;
+		height:35vh;
 	}
 
 	header h1{
