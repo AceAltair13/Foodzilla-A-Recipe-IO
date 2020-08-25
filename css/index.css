@@ -118,15 +118,19 @@ header hr{
 
 
 
-@media screen and (min-width:1300px){
+@media screen and (min-width:1281px){
 
 	
 	.header-content{
 		padding-top:20vh;
 	}
+
+	.header-content{
+		padding-top:25vh;
+	}
 	
 	header img.icon{
-		height:50vh;
+		height:25vh;
 	}
 
 	header h1{
@@ -143,11 +147,11 @@ header hr{
 @media screen and (max-width:1280px){
 
 	.header-content{
-		padding-top:12vh;
+		padding-top:22vh;
 	}
 
 	header img.icon{
-		height:35vh;
+		height:28vh;
 	}
 
 	header h1{
@@ -163,8 +167,8 @@ header hr{
 @media screen and (max-width:1048px){
 
 	header img.icon{
-		padding-top:25vh;
-		height:48vh;
+		padding-top:3vh;
+		height:25vh;
 	}
 
 	header h1{
@@ -185,8 +189,8 @@ header hr{
 @media screen and (max-width:768px){
 
 	header img.icon{
-		padding-top:25vh;
-		height:48vh;
+		padding-top:8vh;
+		height:28vh;
 	}
 
 	header h1{
@@ -205,8 +209,8 @@ header hr{
 	}
 	
 	header img.icon{
-		padding-top:28vh;
-		height:46vh;
+		padding-top:5vh;
+		height:25vh;
 	}
 
 	header h1{
@@ -222,8 +226,8 @@ header hr{
 	}
 	
 	header img.icon{
-		padding-top:35vh;
-		height:55vh;
+		padding-top:15vh;
+		height:30vh;
 	}
 
 	header h1{
