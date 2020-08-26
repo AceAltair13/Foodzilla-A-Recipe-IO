@@ -18,16 +18,18 @@
 
     <!-- CSS -->
     <link href="css/authenticate.css" rel="stylesheet">
+
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
+    <script src="js/username-email-regex.js"></script>
+    <form class="form-signin" onsubmit="return validate(this)" action="#" method="POST">
       <img class="logo" src="assets/images/foodzilla.png" alt="Foodzilla Logo">
       <h1 class="main-title">Foodzilla</h1>
-      <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-      <input type="email" id="inputPassword" class="form-control" placeholder="Email Address" required>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <input type="password" id="reenterPassword" class="form-control mb-5" placeholder="Re-enter Password" required>
+      <input type="text" name="inputUsername" class="form-control" placeholder="Username" pattern="\w+" title="Must contain only alphanumeric characters and underscores" required autofocus>
+      <input type="email" name="inputEmail" class="form-control" placeholder="Email Address" required>
+      <input type="password" name="inputPassword" class="form-control" placeholder="Password" title="Password should be atleast 6 characters long" required>
+      <input type="password" name="reenterPassword" class="form-control mb-5" placeholder="Re-enter Password" required>
       <button class="btn btn-lg btn-block button" type="submit">Register</button>
       <p class="mt-4 copyright">&copy; Foodzilla - A Recipe IO</p>
     </form>
