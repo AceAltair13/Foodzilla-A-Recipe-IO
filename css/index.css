@@ -106,10 +106,6 @@ header p{
 	transition:color 2s;
 }
 
-p:hover{
-	color:#FFEA03;
-}
-
 header hr{
     border: 0;
     border-bottom: 1px dashed;
