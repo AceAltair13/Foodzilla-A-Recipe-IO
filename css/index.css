@@ -403,6 +403,13 @@ header hr{
     color: #ffe78f;
     font-family: 'PT Sans', sans-serif;
 }
+
+/*================Promo=========================*/
+
+.promo {
+	background-color: black;
+}
+
 /*====================Footer==========================================*/
 
 body {
