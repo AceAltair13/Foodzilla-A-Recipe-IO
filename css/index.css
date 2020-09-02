@@ -20,13 +20,24 @@ header nav a{
 }
 
 .navbar-brand{
-	margin-right:68vw;
+	margin-right:72vw;
+}
+
+
+.audio-features{
+	padding-top:4%;
+	text-align: center;
+
+}
+
+.audio{
+	width:40%;
 }
 
 @media screen and (max-width:1350px)
 {
 	.navbar-brand{
-		margin-right:61.5vw;
+		margin-right:62vw;
 	}
 }
 
@@ -118,10 +129,6 @@ header hr{
 
 	
 	.header-content{
-		padding-top:20vh;
-	}
-
-	.header-content{
 		padding-top:25vh;
 	}
 	
@@ -160,6 +167,12 @@ header hr{
 	}	
 }
 
+@media screen and (max-width:1200px){
+	.navbar-brand{
+		margin-right:55vw;
+	}
+}
+
 @media screen and (max-width:1048px){
 
 	header img.icon{
@@ -175,10 +188,11 @@ header hr{
 	{
 		font-size:1.5rem;
 	}	
-}
 
-.navbar-brand{
-	margin-right:59vw;
+
+	.navbar-brand{
+		margin-right:60%;
+	}
 }
 
 
@@ -339,6 +353,7 @@ header hr{
     font-size: 2rem;
 }
 
+
 @media (max-width: 768px) {
     .testimonial-text {
         padding: 2% 8% 2%;
@@ -348,6 +363,8 @@ header hr{
         width: 6rem;
     }
 }
+
+
 
 /*====================About========================*/
 
