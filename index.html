@@ -76,10 +76,9 @@
     <!-- Features -->
     
     <section id="features">
-      <div class="container-fluid feature-background">
-        <div class="container">
+        <div class="container feature-background">
           
-          <div class="featurette-title">
+          <div class="featurette-title mb-5">
             <h1 class="featurette-main-heading">Features</h1>
             <i class="fas fa-grip-lines fa-3x"></i>
             <i class="fas fa-star fa-3x"></i>
@@ -89,27 +88,32 @@
 
           <div class="row">
 
-            <div class="featurette col-lg-4 col-md-4">
-              <i class="featurette-icon fas fa-hamburger fa-7x"></i>
+            <div class="featurette col-lg-4 p-3">
+              <div class="featurette-box p-3">
+                <i class="featurette-icon fas fa-hamburger fa-7x"></i>
               <h1 class="featurette-heading">Recipe Finder</h1>
               <h5 class="featurette-text">Just input the ingredients or recipe name and get variety of different recipe suggestions! Or get them from your fridge automatically!</h5>
-              <button type="button" class="btn btn-outline-warning btn-lg featurette-button">Check it Out</button>
+              <!-- <button type="button" class="btn btn-outline-warning btn-lg featurette-button">Check it Out</button> -->
+              </div>
             </div>
-            <div class="featurette col-lg-4 col-md-4">
-              <i class="featurette-icon fas fa-clipboard fa-7x"></i>
-              <h1 class="featurette-heading">Quick Notes</h1>
-              <h5 class="featurette-text">Want to write some quick notes while cooking? Or maybe a TODO list? We have got you covered! Simply use the notepad feature.</h5>
-              <button type="button" class="btn btn-outline-warning btn-lg featurette-button">Check it Out</button>
+            <div class="featurette col-lg-4 p-3">
+              <div class="featurette-box p-3">
+                <i class="featurette-icon fas fa-clipboard fa-7x"></i>
+                <h1 class="featurette-heading">Quick Notes</h1>
+                <h5 class="featurette-text">Want to write some quick notes while cooking? Or maybe a TODO list? We have got you covered! Simply use the notepad feature.</h5>
+                <!-- <button type="button" class="btn btn-outline-warning btn-lg featurette-button">Check it Out</button> -->
+              </div>
             </div>
-            <div class="featurette col-lg-4 col-md-4">
-              <i class="featurette-icon fas fa-users fa-7x"></i>
-              <h1 class="featurette-heading">Social</h1>
-              <h5 class="featurette-text">#CookTogether. Add friends and cook together. And see what they are cooking. Or show what you are cooking. Its always fun with friends!</h5>
-              <button type="button" class="btn btn-outline-warning btn-lg featurette-button">Check it Out</button>
+            <div class="featurette col-lg-4 p-3">
+              <div class="featurette-box p-3">
+                <i class="featurette-icon fas fa-users fa-7x"></i>
+                <h1 class="featurette-heading">Social</h1>
+                <h5 class="featurette-text">#CookTogether. Add friends and cook together. And see what they are cooking. Or show what you are cooking. Its always fun with friends!</h5>
+                <!-- <button type="button" class="btn btn-outline-warning btn-lg featurette-button">Check it Out</button> -->
+              </div>
             </div>
 
         </div>
-      </div>
 
       </div>
     </section>
@@ -117,7 +121,6 @@
     <!-- Testimonial -->
 
     <section id='testimonial'>
-      <div class="container-fluid testimonial-background">
         <div class="container testimonial-container">
           <div class="featurette-title">
             <h1 id="testimonial" class="featurette-main-heading testimonial">Testimonial</h1>
@@ -125,28 +128,26 @@
             <i class="fas fa-star fa-3x testimonial"></i>
             <i class="fas fa-grip-lines fa-3x testimonial"></i>
           </div>
-          <div class="audio-features"> 
-            <audio class="audio" controls loop>
-              <source src="/assets/audio/Make Recipe.mp3" type="audio/mp3">
-  
-              Your browser does not support the audio tag.
-            </audio>
-          </div>
 
           <div class="testimonials">
             <img class="avatar" src="assets/images/img_avatar.png" alt="avatar">
-
+            <div class="audio-features"> 
+              <audio class="audio" controls loop>
+                <source src="/assets/audio/Make Recipe.mp3" type="audio/mp3">
+    
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
             <p class="featurette-text testimonial-text testimonial">"Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
 
             <h3 class="featurette-text testimonial-author testimonial">- Lorem Ipsum</h3>
           </div>
         </div>
-      </div>
     </section>
 
     <!--Video-->
     <section id="promo-section">
-      <div class="container-fluid promo">
+      <div class="container promo pt-5">
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/V5w1OGknhlc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -156,31 +157,47 @@
     <!-- About -->
 
     <section id='about'>
-      <div class='container-fluid about-background'>
-        <div class=container>
+      
+        <div class="container about-container">
 
-          <div class='featurette-title'>
+          <div class='featurette-title pb-5'>
             <h1 class="featurette-main-heading about">About Us</h1>
             <i class="fas fa-grip-lines fa-3x about"></i>
             <i class="fas fa-star fa-3x about"></i>
             <i class="fas fa-grip-lines fa-3x about"></i>
           </div>
 
-          <div class="row" style="padding: 3%">
+          <div class="row">
+
             <div class="col-lg-4 col-md-4 team-image">
-              <img class='team-avatar' src="assets/images/Yash.png" alt="tirth_icon">
+              <a href="https://www.linkedin.com/">
+                <div class="avatar-image">
+                  <img class='team-avatar' src="assets/images/yash.png" alt="tirth_icon">
+                  <div class="middle fa fa-linkedin fa-2x"></div>
+                </div>
+              </a>
               <h1 class='about-title'>Yash Thakkar</h1>
               <h4 class='about-text featurette-text'>TE5-D 74</h4>
             </div>
 
             <div class="col-lg-4 col-md-4 team-image">
-              <img class='team-avatar' src="assets/images/tirth.png" alt="tirth_icon">
+              <a href="https://www.linkedin.com/">
+                <div class="avatar-image">
+                  <img class='team-avatar' src="assets/images/tirth.png" alt="tirth_icon">
+                  <div class="middle fa fa-linkedin fa-2x"></div>
+                </div>
+              </a>
               <h1 class='about-title'>Tirth Thoria</h1>
               <h4 class='about-text featurette-text'>TE5-5 75</h4>
             </div>
 
             <div class="col-lg-4 col-md-4 team-image">
-              <img class='team-avatar' src="assets/images/varun.png" alt="tirth_icon">
+              <a href="https://www.linkedin.com/">
+                <div class="avatar-image">
+                  <img class='team-avatar' src="assets/images/varun.png" alt="tirth_icon">
+                  <div class="middle fa fa-linkedin fa-2x"></div>
+                </div>
+              </a>
               <h1 class='about-title'>Varun Yadav</h1>
               <h4 class='about-text featurette-text'>TE5-D 83</h4>
             </div>
@@ -188,7 +205,7 @@
           </div>
 
         </div>
-      </div>
+      
     </section>
 
 
