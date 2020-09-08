@@ -36,6 +36,10 @@ body {
   }
 }
 
+.preference {
+  text-align: left;
+  font-family: Cinzel;
+}
 
 .button {
     background-color: #900d0d;
