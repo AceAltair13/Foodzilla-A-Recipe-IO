@@ -1,10 +1,15 @@
+/* =============Global=============== */
+body {
+	background-color: #fffafa;
+}
+
 
 /*================Header===================*/
 
 header{
     background-color : #FFE74C;
-    height : 100vh;
-    background-image: url(../assets/images/header_cover.webp);
+	height : 100vh;
+	background-image: url(../assets/images/header_cover.webp);
     background-position: center;
     background-size: cover;
 }
@@ -264,10 +269,6 @@ header hr{
 
 /*================Features===================*/
 
-.feature-background {
-    background-color: #810000;
-}
-
 .featurette-main-heading {
     font-size: 6.5rem;
 }
@@ -285,9 +286,9 @@ header hr{
 
 .featurette-title {
     font-family: Rowdies, cursive;
-    color: #fbd46d;
+    color: #c23434;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 6%;
 }
 
 .featurette {
@@ -295,23 +296,33 @@ header hr{
     border-radius: 20px; */
     padding: 2rem;
     text-align: center;
-    color: #fff;
+    color: #e6e6e6;
+}
+
+.featurette .featurette-box {
+	background-color: #cb3737;
+	border-radius: 20px;
+	transition: transform 0.4s;
+	box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.75);
+}
+
+.featurette .featurette-box:hover {
+	transform: scale(1.08);
 }
 
 .featurette-icon {
     margin: 1rem 0 1rem 0;
-	color: #ffa36c;
-	transition: transform 2s;
+	color: #ebdc87;
 }
 
 .featurette-icon:hover {
-	color: #ebdc87;
+	transition: transform ease 1.5s;
 	transform: rotate(360deg);
 }
 
 .featurette-heading {
     font-family: Rowdies, cursive;
-    color: #fbd46d;
+    color: #fafafa;
 }
 
 .featurette-text {
@@ -368,25 +379,52 @@ header hr{
 
 /*====================About========================*/
 
-.about-background {
-    background-color: #cf1b1b;
+.about-container {
+	padding-bottom: 7%;
 }
 
 .about {
-    color: #ffe78f;
+    color: #cb3737;
 }
 
 .team-image {
-    text-align: center;
+	text-align: center;
+}
+
+.avatar-image {
+	position: relative;
 }
 
 .team-avatar {
-	width: 12rem;
-	transition: transform 0.4s;
+	width: 90%;
+	height: auto;
+	transition: 0.4s ease;
 }
 
-.team-avatar:hover {
-	transform: scale(1.12);
+.middle {
+	opacity: 0;
+	position: absolute;
+	color: white;
+	height: 1em;
+	width: 1em;
+	left: 50%;
+	margin-left: -0.5em;
+	top: 50%;
+	transition: 0.4s ease;
+}
+
+.fa-linkedin {
+	color: #0e76a8;
+	border-radius: 5px;
+	padding: 1%
+}
+
+.avatar-image:hover .team-avatar {
+	opacity: 0.15;
+}
+
+.avatar-image:hover .middle {
+	opacity: 1;
 }
 
 .about-title {
@@ -394,21 +432,19 @@ header hr{
     font-family: Rowdies, cursive;
     font-size: 2.6rem;
     font-weight: bolder;
-    color: #ffe78f;
+    color: #cb3737;
 }
 
 .about-text {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffe78f;
+    color: #ee6f57;
     font-family: 'PT Sans', sans-serif;
 }
 
 /*================Promo=========================*/
 
-.promo {
-	background-color: black;
-}
+
 
 /*====================Footer==========================================*/
 
