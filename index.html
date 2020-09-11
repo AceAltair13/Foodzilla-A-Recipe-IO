@@ -172,12 +172,12 @@
             <div class="col-lg-4 col-md-4 team-image">
               <a href="https://www.linkedin.com/">
                 <div class="avatar-image">
-                  <img class='team-avatar' src="assets/images/yash.png" alt="tirth_icon">
+                  <img class='team-avatar' src="Yash.png">
                   <div class="middle fa fa-linkedin fa-2x"></div>
                 </div>
               </a>
-              <h1 class='about-title'>Yash Thakkar</h1>
-              <h4 class='about-text featurette-text'>TE5-D 74</h4>
+              <!-- <h1 class='about-title'>Yash Thakkar</h1>
+              <h4 class='about-text featurette-text'></h4> -->
             </div>
 
             <div class="col-lg-4 col-md-4 team-image">
@@ -187,20 +187,54 @@
                   <div class="middle fa fa-linkedin fa-2x"></div>
                 </div>
               </a>
-              <h1 class='about-title'>Tirth Thoria</h1>
-              <h4 class='about-text featurette-text'>TE5-5 75</h4>
+              <!-- <h1 class='about-title'>Tirth Thoria</h1>
+              <h4 class='about-text featurette-text'></h4> -->
             </div>
 
             <div class="col-lg-4 col-md-4 team-image">
               <a href="https://www.linkedin.com/">
                 <div class="avatar-image">
-                  <img class='team-avatar' src="assets/images/varun.png" alt="tirth_icon">
+                  <img class='team-avatar' src="assets/images/varun.png" alt="varun_icon" onmouseover='getContent("aj.html")' onmouseout='clearContent()'>
+                  <script>
+                    function getContent(url)
+                    {
+                        var xmlhttp;
+
+                        if (window.XMLHttpRequest)
+                          {// code for IE7+, Firefox, Chrome, Opera, Safari
+                              xmlhttp=new XMLHttpRequest();
+                          }
+
+                        else
+                        {// code for IE6, IE5
+                            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+
+                        xmlhttp.onreadystatechange=function()
+                        {
+                          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                          {
+                            document.getElementById("aj").innerHTML=xmlhttp.responseText;
+                          }
+                        }
+
+                        xmlhttp.open('GET',url,true);
+                        xmlhttp.send();
+                        }
+
+                        function clearContent()
+                        {
+                              document.getElementById('aj').innerHTML=' ';
+                        }
+                  </script>
                   <div class="middle fa fa-linkedin fa-2x"></div>
                 </div>
               </a>
-              <h1 class='about-title'>Varun Yadav</h1>
-              <h4 class='about-text featurette-text'>TE5-D 83</h4>
-            </div>
+              <!-- <h1 class='about-title'>Varun Yadav</h1>
+              <h4 class='about-text featurette-text'></h4> -->
+              <div id="aj">
+              </div>
+          </div>
 
           </div>
 
