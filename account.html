@@ -5,9 +5,15 @@
             Example
 
         </title>
-        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <!-- <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="material.js"></script>
     </head>
     <style>
         #search_div{
@@ -65,11 +71,12 @@
             outline:none;
             cursor:pointer;
             /* color: coral; */
-            background-color: coral;
+            /* background-color: coral; */
+            /* color:white; */
         }
          #serach_button{
-            margin-top:2px;
-            margin-left:40px;
+            margin-top:2.3px;
+            margin-left:44px;
             float: left;
             outline: none;
 
@@ -99,10 +106,10 @@
              <div id="inp">
                 <input id="recipe_finder" type="search" placeholder="Search Recipie .....">
             </div>
-            <div id="serach_button">
-                <button class="mdc-button--raised" id="mat">
-                    <span class="mdc-button__label" id="mat">Search</span>
-                </button>
+             <div id="serach_button">
+                <button class="button3 mdc-button mdc-button--raised" id="mat">
+                    Search
+                  </button>
             </div>
         </div>
     </body>
