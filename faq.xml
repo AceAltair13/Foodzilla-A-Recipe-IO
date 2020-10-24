@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="faq.xsl" ?>
+
+<faq>
+
+    <question>
+        <number>Question 1</number>
+        <query>What is Foodzilla?</query>
+        <answer>Foodzilla is a recipe searching website where you can find tonnes of recipes retrieved by an API</answer>
+    </question>
+
+    <question>
+        <number>Question 2</number>
+        <query>What is Quick Notes?</query>
+        <answer>Quick notes is a feature wherein you can store your temporary notes in your dashboard while preparing a recipe and you have the option to store it on the database or keep it temporary.</answer>
+    </question>
+
+    <question>
+        <number>Question 3</number>
+        <query>What is Social Features?</query>
+        <answer>Using social features, you can add friends on Foodzilla and see what they are cooking currently or what they are upto!</answer>
+    </question>
+
+    <question>
+        <number>Question 4</number>
+        <query>Can I submit my own recipe?</query>
+        <answer>Yes, you can submit your own recipe and it will be stored on our database.</answer>
+    </question>
+
+    <question>
+        <number>Question 5</number>
+        <query>Can I create account for free?</query>
+        <answer>Yes, it is and always will be free.</answer>
+    </question>
+
+</faq>
+

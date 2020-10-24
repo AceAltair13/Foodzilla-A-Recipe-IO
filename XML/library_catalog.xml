@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="library_catalog.xsl" ?>
+
+<catalog>
+
+    <book>
+        <name>The Hero's Journey</name>
+        <author>Dan White</author>
+        <year>2008</year>
+        <subject>Fiction</subject>
+        <price>250</price>
+    </book>
+
+    <book>
+        <name>My Tales</name>
+        <author>Saroj Nath</author>
+        <year>2010</year>
+        <subject>Autobiography</subject>
+        <price>390</price>
+    </book>
+
+    <book>
+        <name>Revelations</name>
+        <author>Ezio Auditore</author>
+        <year>2012</year>
+        <subject>Non-Fictional</subject>
+        <price>500</price>
+    </book>
+
+</catalog>

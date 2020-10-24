@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Alpha",
+        "status": "Hello There!"
+    },
+    {
+        "id": 2,
+        "name": "Beta",
+        "status": "Hey There, this is Beta!"
+    },
+    {
+        "id": 3,
+        "name": "Gamma",
+        "status": "This is gamma, i like tasty food!"
+    },
+    {
+        "id": 4,
+        "name": "Delta",
+        "status": "I love Foodzilla!"
+    }
+]
