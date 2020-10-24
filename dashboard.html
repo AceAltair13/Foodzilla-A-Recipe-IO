@@ -14,11 +14,61 @@
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
 
+  <script type="application/javascript">
+    function loadJSON() {
+      var data_file = "friends.json";
+      var http_request = new XMLHttpRequest();
+      try {
+        // Opera 8.0+, Firefox, Chrome, Safari
+        http_request = new XMLHttpRequest();
+      } catch (e) {
+        // Internet Explorer Browsers
+        try {
+          http_request = new ActiveXObject("Msxml2.XMLHTTP");
+
+        } catch (e) {
+
+          try {
+            http_request = new ActiveXObject("Microsoft.XMLHTTP");
+          } catch (e) {
+            // Something went wrong
+            alert("Your browser broke!");
+            return false;
+          }
+
+        }
+      }
+
+      http_request.onreadystatechange = function () {
+
+        if (http_request.readyState == 4) {
+          // Javascript function JSON.parse to parse JSON data
+          var jsonObj = JSON.parse(http_request.responseText);
+          alert("Json Acquired");
+          document.getElementById("dashboard-page").innerHTML = "";
+
+          jsonObj.forEach(function (obj) {
+            addObj(obj);
+          })
+
+          function addObj(obj) {
+            document.getElementById("dashboard-page").innerHTML +=
+              "<div class='friend-box mt-2 mb-3'><div class='friends p-3'><h3 class='friend-name'>" + obj.name +
+              "</h3><p class='friend-status'>" + obj.status + "<p><p class='friend-id mt-0'>" + obj.id +
+              "</p></div></div>"
+          }
+        }
+      }
+
+      http_request.open("GET", data_file, true);
+
+      http_request.send();
+    }
+  </script>
+
 </head>
 
 <body>
-
-
 
   <div class="d-flex" id="wrapper">
 
@@ -27,8 +77,8 @@
       <div class="list-group list-group-flush">
         <div class="profile">
           <img src="assets/images/img_avatar.png" alt="user_avatar" class="image">
-          <h3 class="profile-name text-white mt-3">Tirth Thoria</h3>
-          <p class="text-white">My Custom Status</p>
+          <h3 class="profile-name text-white mt-3 mb-0">Tirth Thoria</h3>
+          <p class="text-white mt-0">My Custom Status</p>
         </div>
         <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search mr-2" fill="currentColor"
@@ -53,7 +103,8 @@
             <path fill-rule="evenodd"
               d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
           </svg>TODO List</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="loadJSON()">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-people-fill mr-2" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -101,7 +152,7 @@
           </div>
       </nav>
 
-      <div class="container-fluid">
+      <div class="container-fluid" id="dashboard-page">
 
       </div>
     </div>
@@ -127,6 +178,7 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+    $()
   </script>
 
 </body>

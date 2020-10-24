@@ -1,72 +1,80 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,
       shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Foodzilla | Register</title>
+  <title>Register</title>
 
-    <link rel="canonical"
-      href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/b20f2a5bee.js" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
-    <link href="css/authenticate.css" rel="stylesheet">
+  <!-- CSS -->
+  <link href="css/login.css" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body class="text-center">
-    <script src="js/username-email-regex.js"></script>
-    <form class="form-signin" onsubmit="return validate(this)" action="#"
-      method="POST">
-      <img class="logo" src="assets/images/foodzilla.png" alt="Foodzilla Logo">
-      <h1 class="main-title">Foodzilla</h1>
-      <input type="text" name="inputUsername" class="form-control"
-        placeholder="Username" pattern="\w+" title="Must contain only
-        alphanumeric characters and underscores" required autofocus>
-      <input type="email" name="inputEmail" class="form-control"
-        placeholder="Email Address" required>
-      <input type="password" name="inputPassword" class="form-control"
-        placeholder="Password" title="Password should be atleast 6 characters
-        long" required>
-      <input type="password" name="reenterPassword" class="form-control"
-        placeholder="Re-enter Password" required>
-      <div class="preference">
-        <h5 class="mt-2">Select your preference:</h5>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio" value="veg">Vegetarian
-          </label>
-        </div>
-        <div class="form-check mb-3">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio" value="nonveg">Non-Vegetarian
-          </label>
+<body class="text-center">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <!-- <img src="/assets/images/foodzilla.png" alt="Foodzilla Logo">
+            <h5 class="card-title text-center mt-2">Foodzilla - Sign In</h5> -->
+            <h2 class="mt-1 pb-2">Foodzilla | Sign Up</h2>
+            <form class="form-signin">
+
+              <div class="form-label-group">
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputUsername">Username</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="reinputPassword" class="form-control" placeholder="Re-enter Password" required>
+                <label for="reinputPassword">Re-enter Password</label>
+              </div>
+
+              <hr class="my-4">
+              <button class="btn btn-lg btn-signin btn-block text-uppercase" type="submit"><i
+                  class="fas fa-sign-in-alt mr-2"></i>Sign up</button>
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                  class="fab fa-google mr-2"></i> Sign up with Google</button>
+              <!-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                  class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
+            </form>
+            <p class="text-center mt-2">Already have an account? <a href="./login.html">Sign In</a></p>
+          </div>
         </div>
       </div>
-      <button class="btn btn-lg btn-block button" type="submit">Register</button>
-      <p class="mt-4 copyright">&copy; Foodzilla - A Recipe IO</p>
-    </form>
+    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>
