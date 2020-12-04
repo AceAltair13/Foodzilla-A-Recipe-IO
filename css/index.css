@@ -19,62 +19,13 @@ header nav {
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
-header nav a {
-	margin-top: 0.5em;
-	font-weight: bold;
-}
-
-.navbar-brand {
-	margin-right: 72vw;
-}
-
-
 .audio-features {
 	padding-top: 4%;
 	text-align: center;
-
 }
 
 .audio {
 	width: 40%;
-}
-
-@media screen and (max-width:1350px) {
-	.navbar-brand {
-		margin-right: 62vw;
-	}
-}
-
-@media screen and (max-width:600px) {
-	.navbar-brand {
-		margin-right: 0.05vw;
-	}
-}
-
-header div li {
-	margin-left: 10%;
-	transition: color 1s;
-}
-
-
-@media screen and (max-width:1200px) {
-	header div li {
-		margin-left: 2%;
-	}
-
-}
-
-.nav-link {
-	transition: color 2s !important;
-}
-
-.nav-link:hover {
-	color: yellow !important;
-}
-
-
-img.icon:hover {
-	transform: 2s rotate(360deg);
 }
 
 .header-content {
@@ -88,7 +39,7 @@ header img.icon {
 	box-sizing: border-box;
 }
 
-img.icon {
+/* img.icon {
 	transition: ease 2s;
 }
 
@@ -96,7 +47,7 @@ img.icon:hover {
 	transform: rotate(360deg);
 	transform-origin: center center;
 
-}
+} */
 
 header h1 {
 	font-family: Cinzel;
@@ -104,11 +55,6 @@ header h1 {
 	font-size: 4.5rem;
 	overflow: none;
 	padding-top: 1%;
-	transition: color 2s;
-}
-
-header h1:hover {
-	color: #FFEA03;
 }
 
 header p {
@@ -251,17 +197,6 @@ header hr {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*================Features===================*/
 
