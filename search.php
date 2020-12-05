@@ -129,7 +129,7 @@ session_start();
                     </div>
                 </div>
                 <?php
-                $connect = mysqli_connect("localhost", "root", "v@run", "foodzilla");
+                $connect = mysqli_connect("localhost", "root", "", "foodzilla");
                 if (isset($_GET["query"]) && $_GET["query"] != "") {
                     $query = $_GET["query"];
                     $querydat = "
