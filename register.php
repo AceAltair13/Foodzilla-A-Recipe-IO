@@ -1,3 +1,29 @@
+<?php
+include('connectdb.php');
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+    $user = $_POST["username"];
+    $email  = $_POST["email"];
+    $password = $_POST["password"];
+    $sql = "
+        INSERT INTO users(`username`,`email`,`password`)
+        VALUES('$user', '$email', MD5('$password'))
+        ";
+    $result = $conn->query($sql);
+    if (mysqli_query($conn, $sql)) {
+      $_SESSION["username"] = $user;
+      header("location: search.php");
+    } else {
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+  }
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -39,52 +65,45 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <!-- <img src="/assets/images/foodzilla.png" alt="Foodzilla Logo">
-            <h5 class="card-title text-center mt-2">Foodzilla - Sign In</h5> -->
             <h2 class="mt-1 pb-2">Foodzilla<br>Sign Up</h2>
-            <form class="form-signin">
+            <form class="form-signin" action="register.php" method="POST">
 
               <div class="form-label-group">
-                <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
                 <label for="inputUsername">Username</label>
               </div>
 
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
                 <label for="inputEmail">Email address</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Password</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="reinputPassword" class="form-control" placeholder="Re-enter Password"
-                  required>
+                <input type="password" id="reinputPassword" class="form-control" placeholder="Re-enter Password" required>
                 <label for="reinputPassword">Re-enter Password</label>
               </div>
 
               <hr class="my-4">
-              <button class="btn btn-lg btn-signin btn-block text-uppercase" type="submit" onclick="a()"><i
-                class="fas fa-sign-in-alt mr-2"></i>Sign up</button>
+              <button class="btn btn-lg btn-signin btn-block text-uppercase" type="submit"><i class="fas fa-sign-in-alt mr-2"></i>Sign up</button>
             </form>
-            <p class="text-center mt-2">Already have an account? <a href="./login.html">Sign In</a></p>
+            <p class="text-center mt-2">Already have an account? <a href="./login.php">Sign In</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

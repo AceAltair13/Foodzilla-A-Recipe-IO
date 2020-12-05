@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["username"])) {
+    header("location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +35,13 @@
             <div class="list-group list-group-flush">
                 <div class="profile">
                     <img src="assets/images/img_avatar.png" alt="user_avatar" class="image">
-                    <h3 class="profile-name text-white mt-3 mb-0">Tirth Thoria</h3>
+                    <h3 class="profile-name text-white mt-3 mb-0">
+                        <?php 
+                            echo strlen($_SESSION["username"]) > 14 
+                            ? substr($_SESSION["username"], 0, 14)."..."
+                            : $_SESSION["username"];
+                        ?>
+                    </h3>
                     <p class="text-white mt-0">My Custom Status</p>
                 </div>
                 <a href="./search.php" class="list-group-item list-group-item-action bg-dark text-white">
@@ -78,10 +93,10 @@
                             <img src="assets/images/img_avatar.png" alt="profile" class="rounded-circle avatar">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" style="position: absolute" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Your Recipes</a>
+                            <a class="dropdown-item" href="./myrecipes.php">Your Recipes</a>
                             <a class="dropdown-item" href="#">Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="./logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>
