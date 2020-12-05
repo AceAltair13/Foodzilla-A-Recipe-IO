@@ -1,3 +1,29 @@
+<?php
+require_once 'connectdb.php';
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["user"]) && isset($_POST["password"])) {
+        $user = $_POST["user"];
+        $password = $_POST["password"];
+        $sql = "
+        SELECT `uid`, `username` FROM users 
+        WHERE (`username` = '$user' OR `email` = '$user') AND `password` = MD5('$password')
+        ";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) == 1) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION["username"] = $row["username"];
+            header("location: search.php");
+        } else {
+            $error = "Invalid Email Address or Password";
+        }
+    }
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -42,17 +68,16 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <img src="assets/images/foodzilla.png" alt="Foodzilla Logo">
-                        <h2 class="mt-1 pb-2">Foodzilla<br>Sign In</h2>
-                        <form class="form-signin" method="POST">
+                        <h2 class="my-1">Foodzilla<br>Sign In</h2>
+                        <div class="mb-1" style="color: red"><?php if(isset($error)) echo $error ?></div>
+                        <form class="form-signin" action="login.php" method="POST">
                             <div class="form-label-group">
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                    required autofocus>
-                                <label for="inputEmail">Email address</label>
+                                <input type="email" id="inputEmail" name="user" class="form-control" placeholder="Email Address" required autofocus>
+                                <label for="inputEmail">Email Address</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                    required>
+                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                                 <label for="inputPassword">Password</label>
                             </div>
 
@@ -60,12 +85,10 @@
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">Remember password</label>
                             </div> -->
+                            <button id="signin" type="submit" class="btn btn-lg btn-signin btn-block text-uppercase"><i class="fas fa-sign-in-alt mr-2"></i>Sign in</button>
+                            <button class="btn btn-lg btn-google btn-block text-uppercase" onclick="b()"><i class="fab fa-google mr-2"></i>Sign in with Google</button>
                         </form>
-                        <button id="signin" class="btn btn-lg btn-signin btn-block text-uppercase" type="submit"
-                            onclick="a()"><i class="fas fa-sign-in-alt mr-2"></i>Sign in</button>
-                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit" onclick="b()"><i
-                                class="fab fa-google mr-2"></i>Sign in with Google</button>
-                        <p class="text-center mt-2">New to Foodzilla? <a href="./register.html">Sign Up</a></p>
+                        <p class="text-center mt-2">New to Foodzilla? <a href="./register.php">Sign Up</a></p>
                         <p class="text-center">Forgot Password ? <a href="./forgotpassword.html">Click Here</a></p>
                     </div>
                 </div>
@@ -73,15 +96,12 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
