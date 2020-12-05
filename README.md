@@ -1,2 +1,2 @@
 # Foodzilla-A-Recipe-IO
-IPL Lab Mini Project
+IP Lab Mini Project

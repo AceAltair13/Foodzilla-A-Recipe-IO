@@ -1,10 +1,13 @@
 <?php
-
 require_once 'connectdb.php';
+session_start();
 
-$sql = "SELECT * FROM `personal` WHERE pid IN (SELECT `fid` FROM `friendof` WHERE `pid` = 1)";
-$result = $conn->query($sql);
+if(!isset($_SESSION["username"])) {
+    header("location: login.php");
+}
 
+$sql = "SELECT `username`, `status` FROM `users` WHERE `uid` IN (SELECT `fid` FROM `friendlist` WHERE `uid` = 1)";
+$result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +40,13 @@ $result = $conn->query($sql);
             <div class="list-group list-group-flush">
                 <div class="profile">
                     <img src="assets/images/img_avatar.png" alt="user_avatar" class="image">
-                    <h3 class="profile-name text-white mt-3 mb-0">Tirth Thoria</h3>
+                    <h3 class="profile-name text-white mt-3 mb-0">
+                        <?php 
+                            echo strlen($_SESSION["username"]) > 14 
+                            ? substr($_SESSION["username"], 0, 14)."..."
+                            : $_SESSION["username"];
+                        ?>
+                    </h3>
                     <p class="text-white mt-0">My Custom Status</p>
                 </div>
                 <a href="./search.php" class="list-group-item list-group-item-action bg-dark text-white">
@@ -85,10 +94,10 @@ $result = $conn->query($sql);
                             <img src="assets/images/img_avatar.png" alt="profile" class="rounded-circle avatar">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" style="position: absolute" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Your Recipes</a>
+                            <a class="dropdown-item" href="./myrecipes.php">Your Recipes</a>
                             <a class="dropdown-item" href="#">Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="./logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -99,7 +108,7 @@ $result = $conn->query($sql);
                 <div class="row">
                     <div class="col-lg-6">
                         <?php
-                        if ($result->num_rows > 0) {
+                        if (mysqli_num_rows($result) > 0) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div class="friend-box p-3 m-3"> <div class="row">
                             <div class="col-lg-3 col-sm-4">
