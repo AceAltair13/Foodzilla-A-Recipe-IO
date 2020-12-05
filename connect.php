@@ -1,11 +1,11 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "v@run", "test");
+$connect = mysqli_connect("localhost", "root", "", "foodzilla");
 $output = '';
 if(isset($_POST["query"]))
 {
 	// $search = mysqli_real_escape_string($connect, $_POST["query"]);
 	$query = "
-	SELECT * FROM image 
+	SELECT * FROM recipes
 	WHERE name LIKE '%".$_POST["query"]."%'
 	";
 	$result = mysqli_query($connect, $query);
