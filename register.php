@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         INSERT INTO users(`username`,`email`,`password`)
         VALUES('$user', '$email', MD5('$password'))
         ";
-    $result = $conn->query($sql);
     if (mysqli_query($conn, $sql)) {
       $_SESSION["username"] = $user;
       header("location: search.php");
