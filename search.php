@@ -1,4 +1,5 @@
 <?php
+require_once 'connectdb.php';
 session_start();
 
 if(!isset($_SESSION["username"])) {
@@ -45,7 +46,21 @@ if(!isset($_SESSION["username"])) {
                         : $_SESSION["username"];
                         ?>
                     </h3>
-                    <p class="text-white mt-0">My Custom Status</p>
+                    <p class="text-white mt-0">
+                        <?php 
+                            $username = $_SESSION['username'];
+                            $sql = " SELECT `status` FROM `users` WHERE `username` = '$username'";
+                            $result = mysqli_query($conn, $sql);
+                            $row = mysqli_fetch_assoc($result);
+                            if($row["status"] == NULL) {
+                                echo 'No Status';
+                            } else {
+                                echo strlen($row["status"]) > 50 
+                                ? substr($row["status"], 0, 50)."..."
+                                : $row["status"];
+                            }
+                        ?>
+                    </p>
                 </div>
                 <a href="./search.php" class="list-group-item list-group-item-action bg-dark text-white">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -145,13 +160,7 @@ if(!isset($_SESSION["username"])) {
                             </div>';
                         }
                     } else {
-                        echo '<div class="row ml-3 mb-4">
-                        <div class="col-12 col-md-10 col-lg-10">
-                            <div class="search-result p-2">
-                                <p class="ml-3">NO Recipe Is Found</p>
-                            </div>
-                        </div>
-                        </div>';
+                        echo '<h4 class="ml-3">No Search Results Found.</h4>';
                     }
                 }
                 ?>
