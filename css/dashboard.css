@@ -1,21 +1,22 @@
-
  #wrapper {
    overflow-x: hidden;
  }
 
  .profile {
-   margin-left: 1rem;
-   margin-bottom: 3rem
+  margin-left: 1rem;
+  margin-bottom: 3rem
  }
 
- .profile .image {
-   height: 7rem;
-   margin-top: 1rem;
-   border-radius: 100%;
+ .profile .image{
+  height: 7rem;
+  margin-top: 1rem;
+  border-radius: 100%;
  }
 
- .avatar {
-   height: 2rem;
+ .friends {
+   background-color: darkred;
+   color: white;
+   border-radius: 1em;
  }
 
  #sidebar-wrapper {
