@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <img src="assets/images/foodzilla.png" alt="Foodzilla Logo">
-                        <h2 class="my-1">Foodzilla<br>Sign In</h2>
+                        <h2 class="my-1">Sign In</h2>
                         <div class="mb-1" style="color: red"><?php if(isset($error)) echo $error ?></div>
                         <form class="form-signin" action="login.php" method="POST">
                             <div class="form-label-group">
