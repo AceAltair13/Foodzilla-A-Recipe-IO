@@ -40,7 +40,7 @@ session_start();
 <div class = "loader_bg">
     <div id="loader"><img src="assets/images/foodzilla.png"></div>
   </div>
-  
+
 <body>
 
   <!-- Top Section -->
@@ -80,6 +80,7 @@ session_start();
               <a class="dropdown-item" href="#features">Features</a>
               <a class="dropdown-item" href="#testimonial">Testimonial</a>
               <a class="dropdown-item" href="#about">About us</a>
+              <a class="dropdown-item" href="todo.php">Todo</a>
             </div>
           </li>
         </ul>
