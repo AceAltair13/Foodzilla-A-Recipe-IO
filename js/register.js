@@ -31,12 +31,12 @@ function a() {
     var flag_2 = 0;
     if ((ans == false) && (password.length <= 8) && (flag == 0)) {
         console.log(flag);
-        alert("Password does not statisfy the given condition!");
+        alert("password doesnot statisfy the given condition");
         flag_1 = 1;
     }
     else if ((repassword != password) && (flag_1 == 0)) {
         console.log(flag_1);
-        alert("Password does not match!");
+        alert("password doesnot match");
     }
     else {
         console.log(flag_1);

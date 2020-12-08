@@ -113,8 +113,7 @@ h2 {
     color: #777;
 }
 
-.btn-signin,
-.btn-google {
+.btn-signin, .btn-google {
     border-radius: 5rem;
     font-size: 80%;
     border-radius: 5rem;
