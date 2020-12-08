@@ -3,6 +3,41 @@ body {
 	background-color: #fffafa;
 }
 
+.loader_bg{
+	position: fixed;
+	z-index: 999999;
+	background: #ffffff;
+	width: 100%;
+	height:100%;
+}
+#loader{
+	position:absolute;
+	top:calc(35vh);
+	left:calc(45vw);
+	animation-name: preloader;
+	animation-duration:1s;
+	animation-timing-function:linear;
+	font-size: 4.5rem;
+	overflow: none;
+}
+
+
+@keyframes preloader{
+	from{
+		transform: scale(0) rotate(0deg);
+		
+	}
+	to{
+		transform: scale(1.0) rotate(360deg);
+		
+	}
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity:1;
+	}
+}
 
 /*================Header===================*/
 
@@ -96,7 +131,7 @@ header hr {
 }
 
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1285px) {
 
 	.header-content {
 		padding-top: 22vh;
