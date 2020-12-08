@@ -4,47 +4,6 @@ body {
 }
 
 
-
-.loader_bg{
-	position: fixed;
-	z-index: 999999;
-	background: #ffffff;
-	width: 100%;
-	height:100%;
-}
-#loader{
-	position:absolute;
-	top:calc(35vh);
-	left:calc(45vw);
-	animation-name: preloader;
-	animation-duration:1s;
-	animation-timing-function:linear;
-	font-size: 4.5rem;
-	overflow: none;
-}
-
-
-
-
-
-@keyframes preloader{
-	from{
-		transform: scale(0) rotate(0deg);
-		
-	}
-	to{
-		transform: scale(1.0) rotate(360deg);
-		
-	}
-	from{
-		opacity: 0;
-	}
-	to{
-		opacity:1;
-	}
-}
-
-
 /*================Header===================*/
 
 header {
@@ -60,52 +19,14 @@ header nav {
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
-header nav a {
-	margin-top: 0.5em;
-	font-weight: bold;
-}
-
-.navbar-brand {
-	margin-right: 72vw;
-}
-
-
-
+.audio-features {
+	padding-top: 4%;
+	text-align: center;
 }
 
 .audio {
 	width: 40%;
 }
-
-@media screen and (max-width:1350px) {
-	.navbar-brand {
-		margin-right: 62vw;
-	}
-}
-
-@media screen and (max-width:600px) {
-	.navbar-brand {
-		margin-right: 0.05vw;
-	}
-}
-
-header div li {
-	margin-left: 10%;
-	transition: color 1s;
-}
-
-
-@media screen and (max-width:1200px) {
-	header div li {
-		margin-left: 2%;
-	}
-
-}
-
-.nav-link {
-	transition: color 2s !important;
-}
-
 
 .header-content {
 	padding-top: 5vh;
@@ -118,10 +39,15 @@ header img.icon {
 	box-sizing: border-box;
 }
 
-img.icon {
+/* img.icon {
 	transition: ease 2s;
 }
 
+img.icon:hover {
+	transform: rotate(360deg);
+	transform-origin: center center;
+
+} */
 
 header h1 {
 	font-family: Cinzel;
@@ -129,10 +55,7 @@ header h1 {
 	font-size: 4.5rem;
 	overflow: none;
 	padding-top: 1%;
-	transition: color 2s;
 }
-
-
 
 header p {
 	font-size: 2rem;
@@ -192,6 +115,11 @@ header hr {
 	}
 }
 
+@media screen and (max-width:1200px) {
+	.navbar-brand {
+		margin-right: 55vw;
+	}
+}
 
 @media screen and (max-width:1048px) {
 
@@ -206,6 +134,11 @@ header hr {
 
 	header p {
 		font-size: 1.5rem;
+	}
+
+
+	.navbar-brand {
+		margin-right: 60%;
 	}
 }
 
@@ -224,10 +157,13 @@ header hr {
 	header p {
 		font-size: 1.2rem;
 	}
-	
 }
 
 @media screen and (max-width:480px) {
+
+	.navbar-brand {
+		margin-right: 0.2vw;
+	}
 
 	header img.icon {
 		padding-top: 5vh;
@@ -241,6 +177,10 @@ header hr {
 
 
 @media screen and (max-width:300px) {
+
+	.navbar-brand {
+		margin-right: 100vw;
+	}
 
 	header img.icon {
 		padding-top: 15vh;
@@ -257,17 +197,6 @@ header hr {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*================Features===================*/
 
