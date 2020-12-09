@@ -1,0 +1,144 @@
+@font-face
+{
+    font-family : Poppins;
+    src:url('../fonts/Poppins-regular.ttf')
+}
+
+*,
+*.before,
+.after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-color:#ececec;
+    font-family : 'Poppins', sans-serif;
+    font-size : 14px;
+    font-weight : 600;
+    letter-spacing:1.2px;
+    height:75vh;
+    width:65vw;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    box-shadow:-10px -10px 15px rgba(255, 255, 255, 0.55),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+    padding : 40px 20px;
+    border-radius : 10px;
+}
+
+
+
+.heading{
+    margin:10px;
+    font:inherit;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+
+
+
+form p{
+    color:red;
+    margin: 0px;
+}
+
+
+
+.task_input{
+    display:block;
+    background-color: #ececec;
+    margin-bottom:25px;
+    border:none;
+    margin-top:20px;
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.55),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+    padding:10px;
+    width:90%;
+    border-radius:7px;
+    outline:none;
+    margin:0 auto;
+}
+
+
+
+::placeholder{
+    font-size: 12px;
+    font-weight:500;
+    color:#ababab;
+    letter-spacing:1.3px;
+}
+
+.add_btn{
+    display:block;
+    width:80%;
+    margin-top:3vh;
+    margin-left:10%;
+    font:inherit;
+    text-decoration:none;
+    border:0;
+    border-radius: 30px;
+    padding:10px;
+    box-shadow:-10px -10px 15px rgba(255, 255, 255, 0.55),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
+    outline: none;
+  
+}
+
+
+table{
+    width:100%;
+    margin : 30px auto;
+    border-collapse: collapse;
+    font:'Poppins',san-serif;
+}
+
+tr{
+    border-bottom : 1px solid #cbcbcb;
+}
+
+th{
+    padding:15px 0px 15px 15px;
+    font-size: 20px;
+
+}
+
+td{
+    /* border:none; */
+    height : 30px; 
+    padding: 15px 0px;
+    font-family:inherit;
+}
+
+.task_num{
+    text-align:center;
+}
+
+
+tr:hover{
+    background : #E9E9E9;
+}
+
+.task{
+    text-align : center;
+}
+
+.delete{
+    text-align:center;
+
+}
+
+.delete a{
+    color:#000;
+    border:1px solid #000;
+    padding : 2px 6px;
+    text-align:center;
+    border-radius : 3px;
+    text-decoration : none;
+}

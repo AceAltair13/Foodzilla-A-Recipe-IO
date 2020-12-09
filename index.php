@@ -32,7 +32,14 @@ session_start();
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
+  <!-- Loader Script -->
+  <script src = "js/loader.js"></script>
+
 </head>
+
+<div class = "loader_bg">
+    <div id="loader"><img src="assets/images/foodzilla.png"></div>
+  </div>
 
 <body>
 
@@ -73,6 +80,7 @@ session_start();
               <a class="dropdown-item" href="#features">Features</a>
               <a class="dropdown-item" href="#testimonial">Testimonial</a>
               <a class="dropdown-item" href="#about">About us</a>
+              <a class="dropdown-item" href="todo.php">Todo</a>
             </div>
           </li>
         </ul>
