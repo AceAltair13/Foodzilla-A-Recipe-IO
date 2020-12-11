@@ -1,9 +1,14 @@
 <?php
-require_once 'connectdb.php';
+// require_once 'connectdb.php';
 session_start();
-
-if(!isset($_SESSION["username"])) {
-    header("location: login.php");
+$data=$_COOKIE["username"];
+$mail=$_COOKIE["email"];
+$_SESSION["username"] = $data;
+$_SESSION["email"] = $mail;
+if(isset($_SESSION["username"])) {
+}
+else{
+  header("location: login.php");
 }
 ?>
 
@@ -23,6 +28,15 @@ if(!isset($_SESSION["username"])) {
 
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
+
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.11.1/dist/sweetalert2.all.min.js"
+        integrity="sha256-d2y12cVyBzRuX+Qwbe6O9dlWfw0hnpxyE/T1yYfEPDg=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+  <!-- javascript -->
+  <script defer src="js/com.js" type="text/javascript"></script>
 
 </head>
 
