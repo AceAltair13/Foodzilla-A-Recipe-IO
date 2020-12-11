@@ -1,27 +1,22 @@
 $(document).ready(function () {
-	$('#search').keyup(function () {
+	$('#dataentry').keyup(function () {
 		var query = $(this).val();
 		if (query != '') {
 			$.ajax({
-				url:"connect.php",
+				url:"/connect.php",
 				method: "POST",
 				data: { query: query },
 				success: function (data) {
-					$('#result').fadeIn();
-					$('#result').html(data);
+					$('#suggestion_out').fadeIn();
+					$('#suggestion').html(data);
 
 
 				}
 			});
 		}
 		else {
-			$('#result').fadeOut();
-			$('#result').html("");
+			$('#suggestion_out').fadeOut();
+			$('#suggestion').html("");
 		}
-	});
-	$('#result').on('click', 'li', function () {
-		var click_text = $(this).text().split('|');
-		$('#search').val(click_text[1]);
-		$('#result').fadeOut();
 	});
 });
