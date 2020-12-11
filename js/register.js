@@ -1,66 +1,104 @@
 function a() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyA0wVImm3QGscOD1ReGbzue1wa9kkd0_GI",
+    authDomain: "foodzilla-io.firebaseapp.com",
+    databaseURL: "https://foodzilla-io.firebaseio.com",
+    projectId: "foodzilla-io",
+    storageBucket: "foodzilla-io.appspot.com",
+    messagingSenderId: "37041438374",
+    appId: "1:37041438374:web:5c311410b4fcadf823fe67",
+    measurementId: "G-KB47CLWNSE"
+  };
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyDqwuPQtTPvkSKYXa-fH2QS7w9_hgnCUBo",
-        authDomain: "mini-7ce45.firebaseapp.com",
-        databaseURL: "https://mini-7ce45.firebaseio.com",
-        projectId: "mini-7ce45",
-        storageBucket: "mini-7ce45.appspot.com",
-        messagingSenderId: "244958992191",
-        appId: "1:244958992191:web:bac7474f876607b02c658a",
-        measurementId: "G-398CY226WY"
-    };
-    // Initialize Firebase
-    if (firebase.apps.length === 0) {
-        firebase.initializeApp(firebaseConfig);
-    }
+  if (firebase.apps.length === 0) {
+    firebase.initializeApp(firebaseConfig);
+  }
 
-    var username = document.getElementById("inputUsername").value;
-    var email = document.getElementById("inputEmail").value;
-    console.log(email);
-    var password = document.getElementById("inputPassword").value;
-    var repassword = document.getElementById("reinputPassword").value;
-    console.log(password, " ", repassword, " ", password.length);
-    var ans = /[A-Z]/.test(password) && /[0-9]/.test(password) && /[a-z]/.test(password) && /[^a-zA-Z0-9]/.test(password);
-    console.log(ans);
-    var flag = 0;
-    var flag_1 = 0;
-    var flag_2 = 0;
-    if ((ans == false) && (password.length <= 8) && (flag == 0)) {
-        console.log(flag);
-        alert("Password does not statisfy the given condition!");
-        flag_1 = 1;
-    }
-    else if ((repassword != password) && (flag_1 == 0)) {
-        console.log(flag_1);
-        alert("Password does not match!");
-    }
-    else {
-        console.log(flag_1);
-        //   alert("password has been changed");
-        firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
+  var username = document.getElementById("inputUsername").value;
+  var email = document.getElementById("inputEmail").value;
+  var password = document.getElementById("inputPassword").value;
+  var repassword = document.getElementById("reinputPassword").value;
+  var ans = /[A-Z]/.test(password) && /[0-9]/.test(password) && /[a-z]/.test(password) && /[^a-zA-Z0-9]/.test(password);
+  var flag = 0;
+  var flag_1 = 0;
+  var flag_2 = 0;
+  if ((email == "") || (password == "") || (repassword == "") || (username == "")) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Please complete the form!!!',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+  else if (((ans == false) || (password.length <= 8)) && (flag == 0)) {
+    Swal.fire({
+      text: `.Password Length Should Be Greater Than 8
+        .Password Should Contain At Least A digit
+        , A Upper Case Letter
+        , A Small Case Letter
+        And Special Character`,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+    flag_1 = 1;
+  }
+  else if ((repassword != password) && (flag_1 == 0)) {
+    console.log(flag_1);
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Password does not match',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+  else {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
+      var user = firebase.auth().currentUser;
 
-            firebase.auth().currentUser.sendEmailVerification().then(function () {
-                alert('Check Your Mail For Verfication');
-                window.location.reload();
-
-            }).catch(function (error) {
-                alert("an error has occured");
-            });
-
-        }).catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(error);
-        });
+      user.updateProfile({
+        displayName: username
+      }).then(function () {
+      }).catch(function (error) {
+      });
 
 
+      firebase.auth().currentUser.sendEmailVerification().then(function () {
+        Swal.fire({
+          text: 'Please check your mail for conformation',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+
+      }).catch(function (error) {
 
 
-    }
+      });
+
+    }).catch(function (error) {
+    });
+
+
+
+
+  }
 
 
 }
