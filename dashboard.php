@@ -30,7 +30,7 @@ if (isset($_SESSION["email"])) {
             $errors = "You must fill in the task";
         }
         else{
-            mysqli_query($db,"UPDATE users SET ustatus = '$user_status' WHERE email = '$_SESSION[email]' ");
+            mysqli_query($db,"UPDATE users SET `status` = '$user_status' WHERE email = '$_SESSION[email]' ");
             header('location:dashboard.php');
         }
     }
@@ -172,9 +172,9 @@ if (isset($_SESSION["email"])) {
 
             $users_status = mysqli_query($db,"SELECT * FROM users WHERE email='$_SESSION[email]'");
             $status = mysqli_fetch_array($users_status);
-            if($status['ustatus']!=NULL)
+            if($status['status']!=NULL)
             {
-              echo $status['ustatus'];
+              echo $status['status'];
             }
             else
             {

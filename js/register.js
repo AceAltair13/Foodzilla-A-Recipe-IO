@@ -34,8 +34,7 @@ function a() {
         popup: 'animate__animated animate__fadeOutUp'
       }
     })
-  }
-  else if (((ans == false) || (password.length <= 8)) && (flag == 0)) {
+  } else if (((ans == false) || (password.length <= 8)) && (flag == 0)) {
     Swal.fire({
       text: `.Password Length Should Be Greater Than 8
         .Password Should Contain At Least A digit
@@ -50,8 +49,7 @@ function a() {
       }
     })
     flag_1 = 1;
-  }
-  else if ((repassword != password) && (flag_1 == 0)) {
+  } else if ((repassword != password) && (flag_1 == 0)) {
     console.log(flag_1);
     Swal.fire({
       icon: 'error',
@@ -64,21 +62,18 @@ function a() {
         popup: 'animate__animated animate__fadeOutUp'
       }
     })
-  }
-  else {
+  } else {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
       var user = firebase.auth().currentUser;
 
       user.updateProfile({
         displayName: username
-      }).then(function () {
-      }).catch(function (error) {
-      });
+      }).then(function () {}).catch(function (error) {});
 
 
       firebase.auth().currentUser.sendEmailVerification().then(function () {
         Swal.fire({
-          text: 'Please check your mail for conformation',
+          text: 'Please check your mail for confirmation!',
           showClass: {
             popup: 'animate__animated animate__fadeInDown'
           },
@@ -86,20 +81,7 @@ function a() {
             popup: 'animate__animated animate__fadeOutUp'
           }
         })
-
-      }).catch(function (error) {
-
-
-      });
-
-    }).catch(function (error) {
-    });
-
-
-
-
+      }).catch(function (error) {});
+    }).catch(function (error) {});
   }
-
-
 }
-

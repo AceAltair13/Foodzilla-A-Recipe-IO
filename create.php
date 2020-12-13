@@ -2,10 +2,39 @@
 require_once 'connectdb.php';
 session_start();
 
-if(isset($_SESSION["username"])) {
-}
-else{
-  header("location: login.php");
+if (isset($_SESSION["email"])) {
+    if (isset($_POST['submit'])) {
+        if (isset($_FILES['recipe-image']['name'])) {
+            $email = $_SESSION['email'];
+            $recipe_name = $_POST['recipe-name'];
+            $ingredients = $_POST['ingredients'];
+            $recipe_method = $_POST['method-preparation'];
+            $imgdata = addslashes(file_get_contents($_FILES['recipe-image']['tmp_name']));
+            $mime = mime_content_type($_FILES['recipe-image']['tmp_name']);
+            $sql = "
+                INSERT INTO recipes(ownerid,name,ingredients,method,image,mime)
+                VALUES(
+                    (SELECT uid FROM users WHERE email = '$email'),
+                    '$recipe_name', '$ingredients', '$recipe_method', '$imgdata', '$mime'
+                )
+            ";
+            if ($conn->query($sql)) {
+                $sql = "
+                    SELECT rid FROM recipes 
+                    WHERE ownerid = (SELECT uid FROM users WHERE email = '$email') 
+                    ORDER BY rid DESC LIMIT 1";
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                header("location: recipe.php?query=" . $row['rid']);
+            } else {
+                echo $conn->error;
+            }
+        } else {
+            echo 'No Image Selected.';
+        }
+    }
+} else {
+    header("location: login.php");
 }
 ?>
 
@@ -39,9 +68,9 @@ else{
                 <div class="profile">
                     <img src="assets/images/img_avatar.png" alt="user_avatar" class="image">
                     <h3 class="profile-name text-white mt-3 mb-0">
-                        <?php 
-                            echo strlen($_SESSION["username"]) > 14 
-                            ? substr($_SESSION["username"], 0, 14)."..."
+                        <?php
+                        echo strlen($_SESSION["username"]) > 14
+                            ? substr($_SESSION["username"], 0, 14) . "..."
                             : $_SESSION["username"];
                         ?>
                     </h3>
@@ -103,11 +132,11 @@ else{
             </nav>
 
             <div class="container-fluid">
-                <div class="heading p-4">
+                <div class="heading pl-4 pt-4">
                     <h1>Create your recipe</h1>
                 </div>
-                <div class="p-4">
-                    <form>
+                <div class="pl-4 pt-2">
+                    <form action="" enctype="multipart/form-data" method="POST">
                         <div class="form-group">
                             <label for="recipe-name">Name of the Recipe</label>
                             <input id="recipe-name" name="recipe-name" type="text" required="required" class="form-control">
@@ -121,7 +150,11 @@ else{
                             <textarea id="method-preparation" name="method-preparation" cols="40" rows="5" class="form-control" required="required"></textarea>
                         </div>
                         <div class="form-group">
-                            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                            <label for="uploadImage">Image of Recipe</label><br>
+                            <input type="file" name="recipe-image" accept="image/*" required>
+                        </div>
+                        <div class="form-group">
+                            <button name="submit" type="submit" class="btn btn-primary mt-3">Submit</button>
                         </div>
                     </form>
                 </div>
