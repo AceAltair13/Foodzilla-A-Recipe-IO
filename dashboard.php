@@ -17,19 +17,20 @@ if (isset($_SESSION["email"])) {
 } else {
   header("location: login.php");
 }
+?>
 
-$errors = "";
-    //connect to the database
+<?php 
+    $errors = "";
+     //connect to the database
     $db = mysqli_connect('localhost','root','','foodzilla');
-    
 
-    if(isset($_POST['submit'])){
-        $status = $_POST['status'];
-        if (empty($status)) {
-            $errors = "Please fill in the status";
+    if(isset($_POST['ustatus'])){
+        $user_status = $_POST['userstatus'];
+        if (empty($user_status)) {
+            $errors = "You must fill in the task";
         }
         else{
-            mysqli_query($db,"INSERT INTO ustatus(ustatus) VALUES ('$status')");
+            mysqli_query($db,"UPDATE users SET ustatus = '$user_status' WHERE email = '$_SESSION[email]' ");
             header('location:dashboard.php');
         }
     }
@@ -139,9 +140,7 @@ $errors = "";
       </nav>
 
       <div class="container-fluid">
-<<<<<<< Updated upstream
 
-=======
       <?php if (isset($_SESSION['success'])) : ?> 
             <div class="error success" > 
                 <h3> 
@@ -168,23 +167,29 @@ $errors = "";
               Email-Id : <?php echo $_SESSION["email"]; ?> <br>
               Custom Status : 
               <?php
-              if(isset($status)) {
-                echo $status;
-              }
-              else{
-                echo "No status found";
-              }
-              ?>
-               <?php if(isset($errors)){ ?>
-                <p> <?php echo $errors; ?> </p>
-                <?php } ?>
-              <br><input type="text" name = "status" class = "status_input" placeholder = "Add or update your status">
-              <button type = "submit" class = "add_btn" name = "submit">Add status</button>
-            </p> 
+              
+            $db = mysqli_connect('localhost','root','','foodzilla');
 
-            
+            $users_status = mysqli_query($db,"SELECT * FROM users WHERE email='$_SESSION[email]'");
+            $status = mysqli_fetch_array($users_status);
+            if($status['ustatus']!=NULL)
+            {
+              echo $status['ustatus'];
+            }
+            else
+            {
+              echo "No status found.";
+            }
+               ?>
+              <form method="POST" action="dashboard.php" class="formholder">
+              <?php if (isset($errors)) { ?>
+                <p style = "color:red"> <?php echo $errors; ?> </p>
+            <?php } ?>
+            <input type="text" name="userstatus" class="task_input" placeholder="Input your status">
+            <button type="submit" class="add_btn" name="ustatus">Update Status</button>
+        </form>
+            </div>
         <?php endif ?> 
->>>>>>> Stashed changes
       </div>
 
     </div>
