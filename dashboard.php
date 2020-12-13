@@ -17,6 +17,22 @@ if (isset($_SESSION["email"])) {
 } else {
   header("location: login.php");
 }
+
+$errors = "";
+    //connect to the database
+    $db = mysqli_connect('localhost','root','','foodzilla');
+    
+
+    if(isset($_POST['submit'])){
+        $status = $_POST['status'];
+        if (empty($status)) {
+            $errors = "Please fill in the status";
+        }
+        else{
+            mysqli_query($db,"INSERT INTO ustatus(ustatus) VALUES ('$status')");
+            header('location:dashboard.php');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +139,52 @@ if (isset($_SESSION["email"])) {
       </nav>
 
       <div class="container-fluid">
+<<<<<<< Updated upstream
 
+=======
+      <?php if (isset($_SESSION['success'])) : ?> 
+            <div class="error success" > 
+                <h3> 
+                    <?php
+                        echo $_SESSION['success'];  
+                        unset($_SESSION['success']); 
+                    ?> 
+                </h3> 
+            </div> 
+        <?php endif ?> 
+   
+        <!-- information of the user logged in -->
+        <!-- welcome message for the logged in user -->
+        <?php  if (isset($_SESSION['username'])) : ?> 
+            <div class = "container-fluid "> 
+                 
+                <h1 class = "display-5 text-center"> 
+                Welcome , <?php echo $_SESSION['username']; ?> 
+                </h1 > 
+               
+            <p class = "lead content-info">
+              <h3> Your details: </h3> <br>
+              Username : <?php echo $_SESSION['username']; ?> <br>
+              Email-Id : <?php echo $_SESSION["email"]; ?> <br>
+              Custom Status : 
+              <?php
+              if(isset($status)) {
+                echo $status;
+              }
+              else{
+                echo "No status found";
+              }
+              ?>
+               <?php if(isset($errors)){ ?>
+                <p> <?php echo $errors; ?> </p>
+                <?php } ?>
+              <br><input type="text" name = "status" class = "status_input" placeholder = "Add or update your status">
+              <button type = "submit" class = "add_btn" name = "submit">Add status</button>
+            </p> 
+
+            
+        <?php endif ?> 
+>>>>>>> Stashed changes
       </div>
 
     </div>
