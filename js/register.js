@@ -34,8 +34,7 @@ function a() {
         popup: 'animate__animated animate__fadeOutUp'
       }
     })
-  }
-  else if (((ans == false) || (password.length <= 8)) && (flag == 0)) {
+  } else if (((ans == false) || (password.length <= 8)) && (flag == 0)) {
     Swal.fire({
       text: `.Password Length Should Be Greater Than 8
         .Password Should Contain At Least A digit
@@ -63,27 +62,26 @@ function a() {
         popup: 'animate__animated animate__fadeOutUp'
       }
     })
-  }
-  else {
+  } else {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
       var user = firebase.auth().currentUser;
 
       user.updateProfile({
         displayName: username
-      }).then(function () {
-      }).catch(function (error) {
-      });
+      }).then(function () { }).catch(function (error) { });
 
 
       firebase.auth().currentUser.sendEmailVerification().then(function () {
         Swal.fire({
-          text: 'Please check your mail for conformation',
+          text: 'Please check your mail for confirmation!',
           showClass: {
             popup: 'animate__animated animate__fadeInDown'
           },
           hideClass: {
             popup: 'animate__animated animate__fadeOutUp'
           }
+        }).then(function () {
+          window.location.replace("login.php");
         })
 
       }).catch(function (error) {
@@ -126,7 +124,4 @@ function a() {
 
 
   }
-
-
 }
-

@@ -1,17 +1,40 @@
 <?php
-// require_once 'connectdb.php';
+require_once 'connectdb.php';
 session_start();
-$data=$_COOKIE["username"];
-$mail=$_COOKIE["email"];
+$data = $_COOKIE["username"];
+$mail = $_COOKIE["email"];
 $_SESSION["username"] = $data;
 $_SESSION["email"] = $mail;
-if(isset($_SESSION["username"])) {
-}
-else{
+if (isset($_SESSION["email"])) {
+  $sql = "SELECT `email` FROM `users` WHERE `email` = '$mail'";
+  $result = $conn->query($sql);
+  if($result->num_rows == 0) {
+    $stmt = "INSERT INTO users(username, email) VALUES('$data', '$mail')";
+    if(!$conn->query($stmt)) {
+      echo "Error: ".$conn->error;
+    }
+  }
+} else {
   header("location: login.php");
 }
 ?>
 
+<?php 
+    $errors = "";
+     //connect to the database
+    $db = mysqli_connect('localhost','root','','foodzilla');
+
+    if(isset($_POST['ustatus'])){
+        $user_status = $_POST['userstatus'];
+        if (empty($user_status)) {
+            $errors = "You must fill in the task";
+        }
+        else{
+            mysqli_query($db,"UPDATE users SET `status` = '$user_status' WHERE email = '$_SESSION[email]' ");
+            header('location:dashboard.php');
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +53,7 @@ else{
   <link href="css/dashboard.css" rel="stylesheet">
 
   <!-- sweet alert -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.11.1/dist/sweetalert2.all.min.js"
-        integrity="sha256-d2y12cVyBzRuX+Qwbe6O9dlWfw0hnpxyE/T1yYfEPDg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.11.1/dist/sweetalert2.all.min.js" integrity="sha256-d2y12cVyBzRuX+Qwbe6O9dlWfw0hnpxyE/T1yYfEPDg=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
@@ -50,49 +72,37 @@ else{
         <div class="profile">
           <img src="assets/images/img_avatar.png" alt="user_avatar" class="image">
           <h3 class="profile-name text-white mt-3 mb-0">
-                        <?php 
-                            echo strlen($_SESSION["username"]) > 14 
-                            ? substr($_SESSION["username"], 0, 14)."..."
-                            : $_SESSION["username"];
-                        ?>
-                    </h3>
+            <?php
+            echo strlen($_SESSION["username"]) > 14
+              ? substr($_SESSION["username"], 0, 14) . "..."
+              : $_SESSION["username"];
+            ?>
+          </h3>
           <p class="text-white mt-0">My Custom Status</p>
         </div>
         <a href="./search.php" class="list-group-item list-group-item-action bg-dark text-white">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search mr-2" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-            <path fill-rule="evenodd"
-              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
           </svg>Search Recipe</a>
         <a href="./create.php" class="list-group-item list-group-item-action bg-dark text-white">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-2" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-            <path fill-rule="evenodd"
-              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
           </svg>Add Recipe</a>
         <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist mr-2" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-            <path fill-rule="evenodd"
-              d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+            <path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
           </svg>TODO List</a>
 
         <a href="./friendlist.php" class="list-group-item list-group-item-action bg-dark text-white">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-people-fill mr-2" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-people-fill mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
           </svg>Friends</a>
         <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle mr-2" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
             <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
           </svg>Profile</a>
@@ -113,26 +123,75 @@ else{
         </button> -->
 
         <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link profile-pic dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="assets/images/img_avatar.png" alt="profile" class="rounded-circle avatar">
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" style="position: absolute" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="./myrecipes.php">Your Recipes</a>
-                <a class="dropdown-item" href="#">Profile</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="./logout.php">Logout</a>
-              </div>
-            </li>
-          </ul>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link profile-pic dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="assets/images/img_avatar.png" alt="profile" class="rounded-circle avatar">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" style="position: absolute" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./myrecipes.php">Your Recipes</a>
+              <a class="dropdown-item" href="#">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./logout.php">Logout</a>
+            </div>
+          </li>
+        </ul>
         <!-- </div> -->
       </nav>
 
       <div class="container-fluid">
-        
+
+      <?php if (isset($_SESSION['success'])) : ?> 
+            <div class="error success" > 
+                <h3> 
+                    <?php
+                        echo $_SESSION['success'];  
+                        unset($_SESSION['success']); 
+                    ?> 
+                </h3> 
+            </div> 
+        <?php endif ?> 
+   
+        <!-- information of the user logged in -->
+        <!-- welcome message for the logged in user -->
+        <?php  if (isset($_SESSION['username'])) : ?> 
+            <div class = "container-fluid "> 
+                 
+                <h1 class = "display-5 text-center"> 
+                Welcome , <?php echo $_SESSION['username']; ?> 
+                </h1 > 
+               
+            <p class = "lead content-info">
+              <h3> Your details: </h3> <br>
+              Username : <?php echo $_SESSION['username']; ?> <br>
+              Email-Id : <?php echo $_SESSION["email"]; ?> <br>
+              Custom Status : 
+              <?php
+              
+            $db = mysqli_connect('localhost','root','','foodzilla');
+
+            $users_status = mysqli_query($db,"SELECT * FROM users WHERE email='$_SESSION[email]'");
+            $status = mysqli_fetch_array($users_status);
+            if($status['status']!=NULL)
+            {
+              echo $status['status'];
+            }
+            else
+            {
+              echo "No status found.";
+            }
+               ?>
+              <form method="POST" action="dashboard.php" class="formholder">
+              <?php if (isset($errors)) { ?>
+                <p style = "color:red"> <?php echo $errors; ?> </p>
+            <?php } ?>
+            <input type="text" name="userstatus" class="task_input" placeholder="Input your status">
+            <button type="submit" class="add_btn" name="ustatus">Update Status</button>
+        </form>
+            </div>
+        <?php endif ?> 
       </div>
-    
+
     </div>
 
     <!-- /#page-content-wrapper -->
@@ -141,19 +200,16 @@ else{
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
 
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function (e) {
+    $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });

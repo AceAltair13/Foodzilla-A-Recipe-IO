@@ -33,13 +33,13 @@ session_start();
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
   <!-- Loader Script -->
-  <script src = "js/loader.js"></script>
+  <script src="js/loader.js"></script>
 
 </head>
 
-<div class = "loader_bg">
-    <div id="loader"><img src="assets/images/foodzilla.png"></div>
-  </div>
+<div class="loader_bg">
+  <div id="loader"><img src="assets/images/foodzilla.png"></div>
+</div>
 
 <body>
 

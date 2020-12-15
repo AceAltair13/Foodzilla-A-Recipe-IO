@@ -42,10 +42,18 @@ else{
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script  src="js/connect.js" type="text/javascript"></script>
-    <script  src="js/com.js" type="text/javascript"></script>
+    <!-- <script  src="js/com.js" type="text/javascript"></script> -->
+
 
 </head>
-
+    <style>
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus ,span{
+    outline: none;
+    }
+    </style>
 <body>
 
     <div class="d-flex" id="wrapper">
@@ -163,9 +171,9 @@ else{
                                     <input class="form-control form-control-lg form-control-borderless" type="search" autocomplete="false"
                                         name="query" id="dataentry" placeholder="Enter ingredient or recipe name">
                                 </div>
-                                <div class="col-auto ml-4">
+                                <!-- <div class="col-auto ml-4">
                                     <button type="sumbit" class="btn btn-lg btn-danger">Search</button>
-                                </div>
+                                </div> -->
                             </div>
                         </form>
                     </div>
