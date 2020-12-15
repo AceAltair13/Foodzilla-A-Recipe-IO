@@ -52,7 +52,6 @@ function a() {
     flag_1 = 1;
   }
   else if ((repassword != password) && (flag_1 == 0)) {
-    console.log(flag_1);
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
@@ -93,6 +92,34 @@ function a() {
       });
 
     }).catch(function (error) {
+      console.log("message is  :", error.message)
+      console.log("message is  :", error.code)
+      if (error.code == "auth/invalid-email") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Please Enter valid email',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+      }
+      if (error.code == "auth/email-already-in-use") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Email address alreday in use',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+      }
     });
 
 
