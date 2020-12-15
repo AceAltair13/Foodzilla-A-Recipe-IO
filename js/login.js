@@ -73,7 +73,10 @@ function a() {
 
     })
         .catch((error) => {
-            Swal.fire({
+        	
+        	if(error.code=="auth/invalid-email"){}
+        	else{
+        	Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Invalid credentials',
@@ -83,6 +86,6 @@ function a() {
                 hideClass: {
                     popup: 'animate__animated animate__fadeOutUp'
                 }
-            })
+            })}
         });
 }
