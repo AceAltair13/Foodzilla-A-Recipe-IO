@@ -12,9 +12,11 @@
     box-sizing: border-box;
 }
 
-
-
 body{
+    background-color: #810000;
+}
+
+.todo{
     background-color:#ececec;
     font-family : 'Poppins', sans-serif;
     font-size : 14px;
@@ -34,7 +36,7 @@ body{
 
 
 
-.heading{
+.todo_heading{
     margin:10px;
     font:inherit;
     text-transform:uppercase;
@@ -44,7 +46,7 @@ body{
 
 
 
-form p{
+.todo_errors{
     color:red;
     margin: 0px;
 }
@@ -92,24 +94,24 @@ form p{
 }
 
 
-table{
+.todo_table{
     width:100%;
     margin : 30px auto;
     border-collapse: collapse;
     font:'Poppins',san-serif;
 }
 
-tr{
+.todo_list tr{
     border-bottom : 1px solid #cbcbcb;
 }
 
-th{
+.todo_heading th{
     padding:15px 0px 15px 15px;
     font-size: 20px;
 
 }
 
-td{
+.todo_list td{
     /* border:none; */
     height : 30px; 
     padding: 15px 0px;
@@ -129,12 +131,12 @@ tr:hover{
     text-align : center;
 }
 
-.delete{
+.delete_task{
     text-align:center;
 
 }
 
-.delete a{
+.delete_task a{
     color:#000;
     border:1px solid #000;
     padding : 2px 6px;
