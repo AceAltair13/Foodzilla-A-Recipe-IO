@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="bg-dark border-right" id="sidebar-wrapper">
+<div class="bg-dark" id="sidebar-wrapper">
     <div class="list-group list-group-flush">
         <div class="profile">
             <img src="assets/images/img_avatar.png" alt="user_avatar" class="image">
