@@ -27,7 +27,7 @@ $db = mysqli_connect('localhost', 'root', '', 'foodzilla');
 if (isset($_POST['ustatus'])) {
   $user_status = $_POST['userstatus'];
   if (empty($user_status)) {
-    $errors = "You must fill in the task";
+    $errors = "You must fill in the status";
   } else {
     mysqli_query($db, "UPDATE users SET `status` = '$user_status' WHERE email = '$_SESSION[email]' ");
     header('location:dashboard.php');

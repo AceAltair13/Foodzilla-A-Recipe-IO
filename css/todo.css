@@ -27,11 +27,23 @@ body{
     position:absolute;
     transform:translate(-50%,-50%);
     top:50%;
-    left:50%;
-    box-shadow:-10px -10px 15px rgba(255, 255, 255, 0.55),
-    10px 10px 15px rgba(70, 70, 70, 0.12);
+    left:60%;
+    box-shadow:-10px -10px 15px rgba(250, 110, 0 , 0.55),
+    10px 10px 15px rgba(250, 110, 0, 0.12);
     padding : 40px 20px;
     border-radius : 10px;
+}
+
+@media screen and (max-width:920px){
+    .todo{
+        left:65%;
+    }
+}
+
+@media screen and (max-width:767px){
+    .todo{
+        left:50%;
+    }
 }
 
 
