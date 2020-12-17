@@ -58,6 +58,7 @@ if (isset($_POST['ustatus'])) {
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
 
 
   <!-- javascript -->
@@ -94,14 +95,19 @@ if (isset($_POST['ustatus'])) {
         <?php if (isset($_SESSION['username'])) : ?>
 
           <div class="container-fluid dashboard-content">
-            <h1 class="display-5 text-center content-type welcome-heading">
-              Welcome, <?php echo $_SESSION['username']; ?>
-            </h1>
+          <section class="left">
+            <img src="./assets/images/profile.svg" alt="profile-image" class="profile-image">
+          </section>
 
+
+          <section class="right">
+            <h1 class="display-3 text-center content-type-heading welcome-heading">
+            Welcome, <?php echo $_SESSION['username']; ?></h1>
             <div class="lead content-info content-type">
-              <p class = "content-type">Username : <?php echo $_SESSION['username']; ?></p>
-              <p class = "content-type">Email-Id : <?php echo $_SESSION["email"]; ?></p>
-              <p class = "content-type">Custom Status :
+              <p class = "content-type content-type-details pb-0">Your details:</p><hr class="line-break">
+              <p class = "content-type pb-0">Username : <?php echo $_SESSION['username']; ?></p><hr class="line-break">
+              <p class = "content-type pb-0">Email-Id : <?php echo $_SESSION["email"]; ?></p><hr class="line-break">
+              <p class = "content-type pb-0">Custom Status :
               <?php
               $db = mysqli_connect('localhost', 'root', '', 'foodzilla');
               $users_status = mysqli_query($db, "SELECT * FROM users WHERE email='$_SESSION[email]'");
@@ -111,16 +117,17 @@ if (isset($_POST['ustatus'])) {
               } else {
                 echo "No status found.";
               }
-              ?>
+              ?></p><hr class="line-break">
               <form method="POST" action="dashboard.php" class="formholder">
                 <?php if (isset($errors)) { ?>
                   <p style="color:red"> <?php echo $errors; ?> </p>
                 <?php } ?>
-                <input type="text" name="userstatus" class="task_input" placeholder="Input your status"><br>
+                <input type="text" name="userstatus" class="status_input" placeholder="Input your status"><br>
                 <button type="submit" class="add_btn" name="ustatus">Update Status</button>
               </form>
                 </p>
           </div>
+            </section>
         <?php endif ?>
       </div>
 
