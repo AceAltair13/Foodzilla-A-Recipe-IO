@@ -80,7 +80,6 @@ session_start();
               <a class="dropdown-item" href="#features">Features</a>
               <a class="dropdown-item" href="#testimonial">Testimonial</a>
               <a class="dropdown-item" href="#about">About us</a>
-              <a class="dropdown-item" href="todo.php">Todo</a>
             </div>
           </li>
         </ul>
