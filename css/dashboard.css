@@ -1,7 +1,7 @@
 
- body{
-   background-color:#810000;
- }
+body{
+  background-color: #e4e2e2;
+}
  
  #wrapper {
    overflow-x: hidden;
@@ -22,10 +22,17 @@
    height: 2rem;
  }
 
+ .sidebar-heading{
+   font-family:'Rowdies',sans-serif;
+   color:white;
+   font-size: 2.5em !important;
+ }
+
  #sidebar-wrapper {
    min-height: 100vh;
    margin-left: -15rem;
    transition: margin .25s ease-out;
+   background-color:#77050f;
  }
 
  #sidebar-wrapper .sidebar-heading {
@@ -70,8 +77,8 @@
    background-color:white;
    border-radius:10px;
    min-height:80vh;
-   width:70%;
-   flex-direction:column;
+   width:80%;
+   flex-direction:row;
    text-align:center;
  }
 
@@ -87,13 +94,21 @@
  }
 
  .welcome-heading{
-  color:#888;
-	font-weight:600;
-	letter-spacing:1px;
+  font-size: 2rem;
+  letter-spacing:1px;
+  font-family:'Rowdies',sans-serif;
  }
 
  .add_btn{
    margin-top:1vh;
  }
 
+
+.list-group-item{
+  background-color: #77050f
+}
+
+.list-group-item:hover{
+  background-color:#7c131c
+}
  

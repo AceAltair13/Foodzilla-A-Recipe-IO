@@ -24,6 +24,9 @@ if (isset($_SESSION["email"])) {
     <link href="css/dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/search.css">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>

@@ -12,26 +12,22 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: #810000;
-}
-
 .todo{
     background-color:#ececec;
-    font-family : 'Poppins', sans-serif;
+    font-family : 'Open Sans', sans-serif;
     font-size : 14px;
     font-weight : 600;
     letter-spacing:1.2px;
-    height:75vh;
-    width:65vw;
-    position:absolute;
-    transform:translate(-50%,-50%);
-    top:50%;
-    left:60%;
-    box-shadow:-10px -10px 15px rgba(250, 110, 0 , 0.55),
-    10px 10px 15px rgba(250, 110, 0, 0.12);
+    display:block;
+    justify-content:center;
     padding : 40px 20px;
     border-radius : 10px;
+    margin-top:8vh;
+    flex-direction:center;
+    text-align:center;
+    width:80%;
+    min-height: 80vh;
+    box-shadow:0px 0px 8px -2px rgba(0,0,0,0.77);
 }
 
 @media screen and (max-width:920px){
@@ -50,7 +46,6 @@ body{
 
 .todo_heading{
     margin:10px;
-    font:inherit;
     text-transform:uppercase;
     text-align:center;
 }
@@ -70,14 +65,15 @@ body{
     background-color: #ececec;
     margin-bottom:25px;
     border:none;
-    margin-top:20px;
     box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.55),
     inset 10px 10px 15px rgba(70, 70, 70, 0.12);
     padding:10px;
-    width:90%;
+    width:60%;
     border-radius:7px;
     outline:none;
     margin:0 auto;
+    height:4.5vh;
+    margin-top:-2vh;
 }
 
 
@@ -91,26 +87,29 @@ body{
 
 .add_btn{
     display:block;
-    width:80%;
-    margin-top:3vh;
-    margin-left:10%;
+    width:60%;
+    margin:0 auto;
+    margin-top:2vh;
     font:inherit;
     text-decoration:none;
     border:0;
     border-radius: 30px;
     padding:10px;
-    box-shadow:-10px -10px 15px rgba(255, 255, 255, 0.55),
-    10px 10px 15px rgba(70, 70, 70, 0.12);
-    outline: none;
+    box-shadow:0px 0px 8px -2px rgba(0,0,0,0.42);
+    /* box-shadow:-10px -10px 15px rgba(255, 255, 255, 0.55),
+    10px 10px 15px rgba(70, 70, 70, 0.12); */
+    outline: none !important;
+    font-size:1.5em;
   
 }
 
 
 .todo_table{
     width:100%;
-    margin : 30px auto;
+    margin-top:2vh;
     border-collapse: collapse;
     font:'Poppins',san-serif;
+    text-align:center;
 }
 
 .todo_list tr{
@@ -118,7 +117,7 @@ body{
 }
 
 .todo_heading th{
-    padding:15px 0px 15px 15px;
+    /* padding:15px 0px 15px 15px; */
     font-size: 20px;
 
 }
@@ -149,8 +148,7 @@ tr:hover{
 }
 
 .delete_task a{
-    color:#000;
-    border:1px solid #000;
+    color:red;
     padding : 2px 6px;
     text-align:center;
     border-radius : 3px;
