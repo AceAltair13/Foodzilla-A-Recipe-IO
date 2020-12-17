@@ -3,10 +3,9 @@
     <div class="list-group list-group-flush">
 
         <div class="profile">
-            <!-- <img src="./assets/images/foodzilla.png" class="ml-3"> -->
             <a href="./" style="text-decoration: none;">
                 <img src="./assets/images/cooking.svg" class="ml-4">
-                <p class="sidebar-heading pt-0 ml-2">Foodzilla</p>
+                <p class="sidebar-heading py-0 ml-2">Foodzilla</p>
             </a>
         </div>
         <a href="./search.php" class="list-group-item list-group-item-action text-white">
