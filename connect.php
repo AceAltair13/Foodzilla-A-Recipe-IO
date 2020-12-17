@@ -24,9 +24,10 @@ if (isset($_POST["query"])) {
 			</li>';
 		}
 	} else {
-		$output .= '<li>
-		<h4 class="ml-3">No Search Results Found.</h4>
-		<li>';
+		$output .= "<li class='ml-4'>
+		<img src='./assets/images/empty_result.svg' height='200px' class='mt-4' />
+		<h4 class='ml-3 mt-2'>No Search Results Found.</h4>
+		<li>";
 	}
 	$output .= '<ul>';
 	echo $output;
