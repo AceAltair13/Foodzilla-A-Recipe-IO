@@ -110,7 +110,7 @@ $tasks = mysqli_query($conn, "SELECT id, task FROM tasks WHERE `uid` = $uid");
             ";
           } else { ?>
             <table class="todo_table">
-              <thead class="todo_headings">
+              <thead class="todo_headings mb-2">
                 <th>#</th>
                 <th class="todo_task pl-6">Task</th>
                 <th>Action</th>

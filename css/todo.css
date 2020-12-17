@@ -130,11 +130,20 @@
     border-bottom : 1px solid #cbcbcb;
 }
 
-.todo_heading th{
-    /* padding:15px 0px 15px 15px; */
-    font-size: 20px;
-
+.todo_headings{
+    font-size:1.5rem;
+    border-bottom:1px solid #cbcbcb;
 }
+
+.task{
+    font-size:1.2rem;
+}
+
+.todo_list{
+    margin-top:2vh !important;
+    padding-top:1vh;
+}
+
 
 .todo_list td{
     /* border:none; */
