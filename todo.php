@@ -100,7 +100,9 @@ $tasks = mysqli_query($conn, "SELECT id, task FROM tasks WHERE `uid` = $uid");
             
           <?php
           if(!mysqli_num_rows($tasks)){
-            echo "<h3>No tasks found</h3>";
+            echo "
+            <img src='./assets/images/empty_tasks.svg' height='80px'>
+            <h4 class='mt-1'>No tasks found</h4>";
           }
           else{?>
           <table class="todo_table">

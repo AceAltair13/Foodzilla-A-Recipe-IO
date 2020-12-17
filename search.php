@@ -68,7 +68,7 @@ else{
 
             <?php require_once 'accountnavbar.php' ?>
 
-            <div class="container-fluid">
+            <div class="recipe-container">
                 <h1 class="p-3">Search Recipe</h1>
 
                 <div class="row ml-3 mb-4">

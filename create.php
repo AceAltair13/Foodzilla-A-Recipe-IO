@@ -72,7 +72,7 @@ if (isset($_SESSION["email"])) {
 
             <?php require_once 'accountnavbar.php' ?>
 
-            <div class="container-fluid">
+            <div class="recipe-container">
                 <div class="heading pl-4 pt-4">
                     <h1>Create your recipe</h1>
                 </div>

@@ -8,14 +8,12 @@ body{
  }
 
  .profile {
-   margin-left: 1rem;
-   margin-bottom: 3rem
+   margin-top: 1rem;
+   margin-bottom: 2rem;
  }
 
- .profile .image {
-   height: 7rem;
-   margin-top: 1rem;
-   border-radius: 100%;
+ .profile img {
+   height: 12rem;
  }
 
  .avatar {
