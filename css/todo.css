@@ -53,15 +53,22 @@
 
 
 
+
+
 .todo_errors{
     color:red;
     margin: 0px;
+    font-family:'Merriweather',sans-serif;
+}
+
+.no-tasks{
+    font-family:'Merriweather',sans-serif;
 }
 
 
 
 .task_input{
-    display:block;
+    display:inline-block;
     background-color: #ececec;
     margin-bottom:25px;
     border:none;
@@ -83,11 +90,13 @@
     font-weight:500;
     color:#ababab;
     letter-spacing:1.3px;
+    font-family:'Merriweather',sans-serif;
 }
 
 .add_btn{
-    display:block;
-    width:60%;
+    text-align:center;
+    display:inline-block;
+    min-width:5%;
     margin:0 auto;
     margin-top:2vh;
     font:inherit;
@@ -99,8 +108,12 @@
     /* box-shadow:-10px -10px 15px rgba(255, 255, 255, 0.55),
     10px 10px 15px rgba(70, 70, 70, 0.12); */
     outline: none !important;
-    font-size:1.5em;
+    font-size:1em;
   
+}
+
+.add_task{
+    margin-top:-5vh;
 }
 
 
@@ -108,7 +121,7 @@
     width:100%;
     margin-top:2vh;
     border-collapse: collapse;
-    font:'Poppins',san-serif;
+    font-family: 'Merriweather',sans-serif !important;
     text-align:center;
 }
 
@@ -154,3 +167,26 @@ tr:hover{
     border-radius : 3px;
     text-decoration : none;
 }
+
+@media screen and (max-width:1024px){
+    .todo_heading{
+        font-size:4rem;
+    }
+}
+
+@media screen and (max-width:768px){
+    .todo_heading{
+        font-size:3rem;
+    }
+    .task_input{
+        display:block;
+        height:6vh;
+        width:80%;
+    }
+    .add_btn{
+        min-width:20%;
+    }
+}
+
+
+
