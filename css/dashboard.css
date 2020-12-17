@@ -1,4 +1,8 @@
 
+ body{
+   background-color:#810000;
+ }
+ 
  #wrapper {
    overflow-x: hidden;
  }
@@ -55,3 +59,41 @@
      margin-left: -15rem;
    }
  }
+
+
+ .dashboard-content{
+   font-family: 'Open Sans',sans-serif;
+   margin:0 auto;
+   margin-top:5vh;
+   padding:5vh 0vh;
+   display:flex;
+   background-color:white;
+   border-radius:10px;
+   min-height:80vh;
+   width:70%;
+   flex-direction:column;
+   text-align:center;
+ }
+
+ .content-type{
+   margin:none;
+   padding:2vh 0vh;
+   border-bottom:1px solid #e1f1ff;
+   border-width:30%;
+ }
+
+ .content-type:last-child{
+   border-bottom:none;
+ }
+
+ .welcome-heading{
+  color:#888;
+	font-weight:600;
+	letter-spacing:1px;
+ }
+
+ .add_btn{
+   margin-top:1vh;
+ }
+
+ 

@@ -55,6 +55,9 @@ if (isset($_POST['ustatus'])) {
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.11.1/dist/sweetalert2.all.min.js" integrity="sha256-d2y12cVyBzRuX+Qwbe6O9dlWfw0hnpxyE/T1yYfEPDg=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+
 
   <!-- javascript -->
   <script defer src="js/com.js" type="text/javascript"></script>
@@ -72,7 +75,7 @@ if (isset($_POST['ustatus'])) {
 
       <?php require_once 'accountnavbar.php' ?>
 
-      <div class="container-fluid">
+      <div class="container-fluid dashboard-container">
 
         <?php if (isset($_SESSION['success'])) : ?>
           <div class="error success">
@@ -88,21 +91,18 @@ if (isset($_POST['ustatus'])) {
         <!-- information of the user logged in -->
         <!-- welcome message for the logged in user -->
         <?php if (isset($_SESSION['username'])) : ?>
-          <div class="container-fluid ">
 
-            <h1 class="display-5 text-center">
+          <div class="container-fluid dashboard-content">
+            <h1 class="display-5 text-center content-type welcome-heading">
               Welcome , <?php echo $_SESSION['username']; ?>
             </h1>
 
-            <p class="lead content-info">
-              <h3> Your details: </h3> <br>
-              Username : <?php echo $_SESSION['username']; ?> <br>
-              Email-Id : <?php echo $_SESSION["email"]; ?> <br>
-              Custom Status :
+            <div class="lead content-info content-type">
+              <p class = "content-type">Username : <?php echo $_SESSION['username']; ?></p>
+              <p class = "content-type">Email-Id : <?php echo $_SESSION["email"]; ?></p>
+              <p class = "content-type">Custom Status :
               <?php
-
               $db = mysqli_connect('localhost', 'root', '', 'foodzilla');
-
               $users_status = mysqli_query($db, "SELECT * FROM users WHERE email='$_SESSION[email]'");
               $status = mysqli_fetch_array($users_status);
               if ($status['status'] != NULL) {
@@ -115,9 +115,10 @@ if (isset($_POST['ustatus'])) {
                 <?php if (isset($errors)) { ?>
                   <p style="color:red"> <?php echo $errors; ?> </p>
                 <?php } ?>
-                <input type="text" name="userstatus" class="task_input" placeholder="Input your status">
+                <input type="text" name="userstatus" class="task_input" placeholder="Input your status"><br>
                 <button type="submit" class="add_btn" name="ustatus">Update Status</button>
               </form>
+                </p>
           </div>
         <?php endif ?>
       </div>
@@ -126,6 +127,7 @@ if (isset($_POST['ustatus'])) {
 
     <!-- /#page-content-wrapper -->
 
+  </div>
   </div>
   <!-- /#wrapper -->
 
