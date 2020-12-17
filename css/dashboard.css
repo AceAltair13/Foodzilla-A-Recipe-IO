@@ -136,12 +136,12 @@ body{
   color: #77050f;
 }
 
-.navbar-brand {
+nav .navbar-brand {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .navbar-brand {
+  nav .navbar-brand {
     display: block;
   }
   .container-title {

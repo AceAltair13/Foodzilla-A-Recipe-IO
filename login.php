@@ -62,7 +62,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <a href="./dashboard.php"><img src="assets/images/foodzilla.png" alt="Foodzilla Logo"></a>
+                        <a href="./"><img src="assets/images/foodzilla.png" alt="Foodzilla Logo"></a>
                         <h2 class="my-1">Sign In</h2>
                         <div class="mb-1" style="color: red"><?php if (isset($error)) echo $error ?></div>
                         <form class="form-signin" autocomplete="off">
