@@ -58,6 +58,25 @@ if (isset($_SESSION["email"])) {
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+    <style>
+        label {
+            font-family: 'Rowdies', sans-serif;
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            width: 80%;
+        }
+
+        @media (max-width: 768px) {
+            .container-title .bi-plus-circle {
+                display: none;
+            }
+            .form-group {
+                width: 100%;
+            }
+        }
+    </style>
 
 </head>
 
@@ -73,8 +92,14 @@ if (isset($_SESSION["email"])) {
             <?php require_once 'accountnavbar.php' ?>
 
             <div class="recipe-container">
-                <div class="heading pl-4 pt-4">
-                    <h1>Create your recipe</h1>
+                <div class="heading ml-2 pt-4">
+                    <h1 class="container-title">
+                        Create your recipe
+                        <svg xmlns="http://www.w3.org/2000/svg" height='3.3rem' fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                    </h1>
                 </div>
                 <div class="pl-4 pt-2">
                     <form action="" enctype="multipart/form-data" method="POST">
@@ -95,7 +120,13 @@ if (isset($_SESSION["email"])) {
                             <input type="file" name="recipe-image" accept="image/*" required>
                         </div>
                         <div class="form-group">
-                            <button name="submit" type="submit" class="btn btn-primary mt-3">Submit</button>
+                            <button name="submit" type="submit" class="btn btn-primary my-3">
+                                Submit
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle mr-2" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                    <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
+                                </svg>
+                            </button>
                         </div>
                     </form>
                 </div>
