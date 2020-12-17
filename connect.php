@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "foodzilla");
+$connect = mysqli_connect("localhost", "root", "v@run", "foodzilla");
 $output = '';
 if (isset($_POST["query"])) {
 	$query = "
