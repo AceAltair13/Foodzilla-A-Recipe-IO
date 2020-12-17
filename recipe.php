@@ -3,6 +3,9 @@ require_once 'connectdb.php';
 session_start();
 
 if (isset($_SESSION["username"])) {
+    if(!isset($_GET["query"])) {
+        header("location: dashboard.php");
+    }
 } else {
     header("location: login.php");
 }
@@ -27,6 +30,11 @@ if (isset($_SESSION["username"])) {
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+    <style>
+        h3 {
+            font-family: 'Rowdies', sans-serif;
+        }
+    </style>
 
 </head>
 
@@ -41,7 +49,7 @@ if (isset($_SESSION["username"])) {
 
             <?php require_once 'accountnavbar.php' ?>
 
-            <div class="container-fluid">
+            <div class="recipe-container pl-4 py-3">
                 <?php
                 $query = $_GET['query'];
                 $querydat = "
@@ -51,15 +59,15 @@ if (isset($_SESSION["username"])) {
                 $result = mysqli_query($conn, $querydat);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        echo '<div class="m-3">
-                        <h1 class="display-3">' . $row["name"] . '</h1><br>
+                        echo '
+                        <h1 class="container-title ml-0">' . $row["name"] . '</h1>
+                        <br>
                         <img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Recipe Photo" class="img-fluid rounded">
                         <br><br><br>
                         <h3 class="text-muted">Ingredients</h3>
                         <p>' . $row["ingredients"] . '</p><br>
                         <h3 class="text-muted">Method of preparation</h3>
-                        <p>' . $row["method"] . '</p>
-                        </div>';
+                        <p>' . $row["method"] . '</p>';
                     }
                 }
                 ?>

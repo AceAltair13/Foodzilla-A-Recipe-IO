@@ -26,7 +26,7 @@ if (isset($_SESSION["email"])) {
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -42,32 +42,33 @@ if (isset($_SESSION["email"])) {
 
 
             <div class="container-fluid">
-            
+
                 <h1 class="p-3">
                     Your Recipes
                 </h1>
 
                 <?php
-                $mail=$_SESSION["email"];
+                $mail = $_SESSION["email"];
                 $querydat = "
                                 SELECT uid FROM  users
                                 WHERE email='$mail'
                             ";
                 $result_user = mysqli_query($conn, $querydat);
-                $row=mysqli_fetch_array($result_user);
-                $data=$row['uid'];
-                $main_query="
+                $row = mysqli_fetch_array($result_user);
+                $data = $row['uid'];
+                $main_query = "
                                 SELECT * from recipes where ownerid='$data'
                             ";
-                $result_main=mysqli_query($conn,$main_query);
-                if(mysqli_num_rows($result_main)>0){
-                    while($row=mysqli_fetch_array($result_main)){
-                            echo'<div class="row m-4">
+                $result_main = mysqli_query($conn, $main_query);
+                if (mysqli_num_rows($result_main) > 0) {
+                    while ($row = mysqli_fetch_array($result_main)) {
+                        $ingredients = strlen($row['ingredients']) > 100 ? substr($row['ingredients'], 0, 100) . "..." : $row['ingredients'];
+                        echo '<div class="row m-4">
                                 <div class="card" style="width: 18rem">
                                 <img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Recipe Photo" class="img-fluid rounded">
                                 <div class="card-body">
-                                <a class="navbar-brand" href=./recipe.php?query=' .$row["rid"]. '>' . $row["name"] . '</a>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
+                                <a class="navbar-brand" href=./recipe.php?query=' . $row["rid"] . '>' . $row["name"] . '</a>
+                                <p class="card-text">' .  $ingredients . '</p>
                                 </div>
                                 </div>
                                 </div>
@@ -75,7 +76,7 @@ if (isset($_SESSION["email"])) {
                     }
                 }
 
-            ?>
+                ?>
 
 
             </div>

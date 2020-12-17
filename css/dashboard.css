@@ -109,4 +109,32 @@ body{
 .list-group-item:hover{
   background-color:#7c131c
 }
- 
+
+.recipe-container {
+  background-color: white;
+  min-height: 85vh;
+  margin: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  box-shadow:0px 0px 8px -2px rgba(0, 0, 0, 0.281);
+}
+
+.container-title {
+  font-family: 'Rowdies', sans-serif;
+  margin-left: 1rem;
+  font-size: 3.6rem;
+  color: #77050f;
+}
+
+.navbar-brand {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    display: block;
+  }
+  .container-title {
+    font-size: 1.7rem;
+  }
+}

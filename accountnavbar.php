@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-dark navbar-dark">
-    <button class="btn" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+    <button class="btn mr-4" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+    <a href="./" class="navbar-brand mx-auto">Foodzilla</a>
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item dropdown">
             <a class="nav-link profile-pic dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
