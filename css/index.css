@@ -12,27 +12,25 @@ body {
 }
 
 #loader {
-	position: absolute;
-	top: calc(35vh);
-	left: calc(45vw);
+	display:flex;
+	justify-content:center;
+	align-content:center;
+	margin-top:30vh;
 	animation-name: preloader;
 	animation-duration: 1s;
 	animation-timing-function: linear;
 	font-size: 4.5rem;
-	overflow: none;
+	
+}
+
+@media screen and (max-width:768px){
+	#loader{
+		height:25vh;
+	}
 }
 
 
 @keyframes preloader {
-	from {
-		transform: scale(0) rotate(0deg);
-
-	}
-
-	to {
-		transform: scale(1.0) rotate(360deg);
-
-	}
 
 	from {
 		opacity: 0;

@@ -56,6 +56,9 @@ if (isset($_SESSION["email"])) {
     <link href="./css/dashboard.css" rel="stylesheet">
     <link href="./css/create.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+
 </head>
 
 <body>

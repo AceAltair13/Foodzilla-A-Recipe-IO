@@ -25,6 +25,9 @@ if (isset($_SESSION["username"])) {
     <!-- Custom styles for this template -->
     <link href="./css/dashboard.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+
 </head>
 
 <body>

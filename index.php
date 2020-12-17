@@ -284,10 +284,8 @@ session_start();
         <br>
         <br>
         <a href="#">Home</a>
-        <a href="./register.html">Register</a>
-        <a href="#">About Us</a>
+        <a href="./register.php">Register</a>
         <a href="faq.xml">FAQ</a>
-        <a href="#">Contact</a>
       </p>
     </div>
 

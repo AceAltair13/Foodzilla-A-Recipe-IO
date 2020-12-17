@@ -29,6 +29,9 @@ $result = mysqli_query($conn, $sql);
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/b20f2a5bee.js" crossorigin="anonymous"></script>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
