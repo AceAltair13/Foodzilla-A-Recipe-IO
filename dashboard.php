@@ -57,6 +57,7 @@ if (isset($_POST['ustatus'])) {
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Rowdies&display=swap" rel="stylesheet">
 
 
   <!-- javascript -->
@@ -94,7 +95,7 @@ if (isset($_POST['ustatus'])) {
 
           <div class="container-fluid dashboard-content">
             <h1 class="display-5 text-center content-type welcome-heading">
-              Welcome , <?php echo $_SESSION['username']; ?>
+              Welcome, <?php echo $_SESSION['username']; ?>
             </h1>
 
             <div class="lead content-info content-type">
