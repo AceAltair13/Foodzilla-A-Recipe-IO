@@ -14,7 +14,7 @@
 
 .todo{
     background-color:#ececec;
-    font-family : 'Open Sans', sans-serif;
+    font-family : 'Merriweather', sans-serif;
     font-size : 14px;
     font-weight : 600;
     letter-spacing:1.2px;
@@ -94,6 +94,7 @@
 }
 
 .add_btn{
+    background-color: #ececec;
     text-align:center;
     display:inline-block;
     min-width:5%;
@@ -109,7 +110,7 @@
     10px 10px 15px rgba(70, 70, 70, 0.12); */
     outline: none !important;
     font-size:1em;
-  
+ 
 }
 
 .add_task{
