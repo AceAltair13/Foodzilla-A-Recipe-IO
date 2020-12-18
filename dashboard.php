@@ -123,7 +123,9 @@ if (isset($_POST['ustatus'])) {
                   <p style="color:red"> <?php echo $errors; ?> </p>
                 <?php } ?>
                 <input type="text" name="userstatus" class="status_input" placeholder="Input your status"><br>
-                <button type="submit" class="add_btn" name="ustatus">Update Status</button>
+                <button type="submit" class="add_btn" name="ustatus"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle mr-2" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
+                </svg>Update Status</button>
               </form>
                 </p>
           </div>
