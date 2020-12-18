@@ -109,7 +109,7 @@ function a() {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Email address alreday in use',
+          text: 'Email address already in use',
           showClass: {
             popup: 'animate__animated animate__fadeInDown'
           },
