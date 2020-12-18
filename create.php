@@ -46,6 +46,9 @@ if (isset($_SESSION["email"])) {
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
 
     <title>Create Recipe</title>
 

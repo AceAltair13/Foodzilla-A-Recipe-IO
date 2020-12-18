@@ -9,11 +9,11 @@ session_start();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Title -->
-  <title>Foodzilla</title>
-
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- Title -->
+  <title>Foodzilla</title>
 
   <!-- Bootstrap Import -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@ session_start();
   <!-- Top Section -->
   <header>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
+    <nav class="navbar fixed-top navbar-expand-md navbar-light navbar-fixed-top">
       <a class="navbar-brand" href="./">Foodzilla&trade;</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@ session_start();
       <img class="icon" alt="Foodzilla icon" src="assets/images/foodzilla.png">
       <h1> Foodzilla </h1>
       <hr>
-      <p>A&nbsp;&nbsp;RECIPE &nbsp;&nbsp;IO</p>
+      <p>A&nbsp;&nbsp;RECIPE&nbsp;&nbsp;IO</p>
 
     </div>
   </header>
@@ -311,7 +311,7 @@ session_start();
     <div class="footer-right">
 
       <p class="footer-company-about">
-        <span>About the company</span>
+        <span>About Us</span>
         Foodzilla is a food recipe website where you can find and share recipes and also see what your friends are cooking !
       </p>
 
