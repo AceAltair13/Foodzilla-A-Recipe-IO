@@ -22,14 +22,12 @@ if (isset($_SESSION["email"])) {
 <?php
 $errors = "";
 //connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'foodzilla');
-
 if (isset($_POST['ustatus'])) {
   $user_status = $_POST['userstatus'];
   if (empty($user_status)) {
     $errors = "You must fill in the status";
   } else {
-    mysqli_query($db, "UPDATE users SET `status` = '$user_status' WHERE email = '$_SESSION[email]' ");
+    mysqli_query($conn, "UPDATE users SET `status` = '$user_status' WHERE email = '$_SESSION[email]' ");
     header('location:dashboard.php');
   }
 }
@@ -112,8 +110,7 @@ if (isset($_POST['ustatus'])) {
               <p class = "content-type pb-0">Email-Id : <?php echo $_SESSION["email"]; ?></p><hr class="line-break">
               <p class = "content-type pb-0">Custom Status :
               <?php
-              $db = mysqli_connect('localhost', 'root', '', 'foodzilla');
-              $users_status = mysqli_query($db, "SELECT * FROM users WHERE email='$_SESSION[email]'");
+              $users_status = mysqli_query($conn,"SELECT * FROM users WHERE email='$_SESSION[email]'");
               $status = mysqli_fetch_array($users_status);
               if ($status['status'] != NULL) {
                 echo $status['status'];
