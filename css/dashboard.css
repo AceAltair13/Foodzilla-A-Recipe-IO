@@ -215,3 +215,6 @@ nav .navbar-brand {
   background-color:#833b41;
 }
  
+.add_btn:hover{
+  background-color: #bb565e;
+}
