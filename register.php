@@ -57,7 +57,7 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <img src="assets/images/foodzilla.png" alt="Foodzilla Logo">
+            <a href="./"><img src="assets/images/foodzilla.png" alt="Foodzilla Logo"></a>
             <h2 class="mt-1 pb-2">Sign Up</h2>
             <form class="form-signin" autocomplete="off">
 
