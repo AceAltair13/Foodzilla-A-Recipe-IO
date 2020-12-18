@@ -19,7 +19,7 @@ if (isset($_SESSION["email"])) {
 
 $errors = "";
 $uidquery = mysqli_query($conn, "SELECT `uid` FROM users WHERE `email` = '$mail'");
-$row = mysqli_fetch_assoc($uidquery);
+$row = mysqli_fetch_array($uidquery);
 $uid = $row['uid'];
 
 if (isset($_POST['submit'])) {
