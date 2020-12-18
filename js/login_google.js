@@ -24,7 +24,7 @@ function b() {
                 document.cookie = "email=" + email;
                 Swal.fire({
                     icon: 'success',
-                    text: 'Sucessfull login',
+                    text: 'Login successful',
                     showClass: {
                         popup: 'animate__animated animate__fadeInDown'
                     },

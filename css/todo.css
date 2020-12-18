@@ -93,8 +93,9 @@
     font-family:'Merriweather',sans-serif;
 }
 
-.add_btn{
-    background-color: #c9c9c9;
+.add_btn{ 
+    color:black;
+    background-color: #dddbdb;
     text-align:center;
     display:inline-block;
     min-width:5%;
