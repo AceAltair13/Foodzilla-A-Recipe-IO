@@ -49,8 +49,8 @@ function a() {
       }
     })
     flag_1 = 1;
-  } else if ((repassword != password) && (flag_1 == 0)) {
-    console.log(flag_1);
+  }
+  else if ((repassword != password) && (flag_1 == 0)) {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
@@ -68,7 +68,7 @@ function a() {
 
       user.updateProfile({
         displayName: username
-      }).then(function () {}).catch(function (error) {});
+      }).then(function () { }).catch(function (error) { });
 
 
       firebase.auth().currentUser.sendEmailVerification().then(function () {
@@ -80,8 +80,48 @@ function a() {
           hideClass: {
             popup: 'animate__animated animate__fadeOutUp'
           }
+        }).then(function () {
+          window.location.replace("login.php");
         })
-      }).catch(function (error) {});
-    }).catch(function (error) {});
+
+      }).catch(function (error) {
+
+
+      });
+
+    }).catch(function (error) {
+      console.log("message is  :", error.message)
+      console.log("message is  :", error.code)
+      if (error.code == "auth/invalid-email") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Please Enter valid email',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+      }
+      if (error.code == "auth/email-already-in-use") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Email address already in use',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+      }
+    });
+
+
+
+
   }
 }
