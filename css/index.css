@@ -24,7 +24,7 @@ body {
 
 @media screen and (max-width:768px){
 	#loader{
-		height:25vh;
+		height:20vh;
 	}
 }
 
