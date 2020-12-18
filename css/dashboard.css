@@ -195,14 +195,15 @@ nav .navbar-brand {
 }
 
 .add_btn{
-  background-color:#ececec;
+  color:white;
   text-align:center;
   display:inline-block;
-  min-width:5%;
+  min-width:15%;
   margin:0 auto;
   margin-top:2vh;
   font:inherit;
   text-decoration:none;
+  padding:2px;
   border:0;
   border-radius: 30px;
   padding:10px;
@@ -211,5 +212,6 @@ nav .navbar-brand {
   10px 10px 15px rgba(70, 70, 70, 0.12); */
   outline: none !important;
   font-size:1em; 
+  background-color:#833b41;
 }
  
