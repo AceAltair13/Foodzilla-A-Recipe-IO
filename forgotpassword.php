@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,
       shrink-to-fit=no">
-      <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
 
     <title>Foodzilla</title>
     <!--Firebase-->
@@ -22,9 +23,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-    <script type="text/javascript" src="js/login.js"></script>
-    <script type="text/javascript" src="js/login_google.js"></script>
-
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/b20f2a5bee.js" crossorigin="anonymous"></script>
 
@@ -33,6 +31,27 @@
 
     <!-- CSS -->
     <link href="css/login.css" rel="stylesheet">
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.11.1/dist/sweetalert2.all.min.js"
+        integrity="sha256-d2y12cVyBzRuX+Qwbe6O9dlWfw0hnpxyE/T1yYfEPDg=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+    <!-- javascript -->
+    <script src="js/forgot.js" type="text/javascript"></script>
+
+    <style>
+        body.swal2-shown>[aria-hidden="true"] {
+            filter: blur(10px);
+        }
+
+        body>* {
+            transition: 0.1s filter linear;
+        }
+    </style>
 
 </head>
 
@@ -43,8 +62,8 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <img src="/assets/images/foodzilla.png" alt="Foodzilla Logo">
-                        <h2 class="mt-1 pb-2">Foodzilla<br>Reset Password</h2>
+                        <img src="./assets/images/foodzilla.png" alt="Foodzilla Logo">
+                        <h2 class="mt-1 pb-2">Foodzilla <br>Forgot Password</h2><br>
                         <form class="form-signin" method="POST">
                             <!-- <div class="form-label-group">
                                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
@@ -53,15 +72,9 @@
                             </div> -->
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                <input type="email" id="inputemail" class="form-control" placeholder="Input Email"
                                     required>
-                                <label for="inputPassword">Enter New Password</label>
-                            </div>
-
-                            <div class="form-label-group">
-                                <input type="password" id="reinputPassword" class="form-control" placeholder="Re-enter Password"
-                                    required>
-                                <label for="reinputPassword">Re-Enter New Password</label>
+                                <label for="inputemail">Enter Your Email</label>
                             </div>
 
                             <!-- <div class="custom-control custom-checkbox mb-3">
@@ -69,8 +82,8 @@
                                 <label class="custom-control-label" for="customCheck1">Remember password</label>
                             </div> -->
                         </form>
-                        <button id="signin" class="btn btn-lg btn-signin btn-block text-uppercase" type="submit"
-                            ><i class="fas fa-sign-in-alt mr-2"></i>Change Password</button>
+                        <button id="signin" class="btn btn-lg btn-signin btn-block text-uppercase"
+                            type="submit" onclick="a()">Next</button>
                         <!-- <button id="signin" class="btn btn-lg btn-signin btn-block text-uppercase" type="submit"
                             onclick="a()"><i class="fas fa-sign-in-alt mr-2"></i>Sign in</button>
                         <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit" onclick="b()"><i
